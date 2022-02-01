@@ -149,9 +149,10 @@
   min-width: 100%;
   text-align: center;
   overflow-x: hidden;
-  margin-left: -100%;
+  margin-left: 0;
   box-sizing: border-box;
-  transition: margin 0.4s;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -196,10 +197,6 @@
   flex-wrap: nowrap;
   overflow-x: hidden;
   align-items: stretch;
-
-  .visible {
-    margin-left: 0;
-  }
 }
 
 .home {

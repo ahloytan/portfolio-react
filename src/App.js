@@ -7,7 +7,6 @@ import Bio from './pages/4. Bio.js'
 import About from './pages/5. About.js'
 import Contact from './pages/6. Contact.js'
 import BackgroundImage from './pages/BackgroundImage.js'
-import ReactGA from 'react-ga';
 
 class App extends React.Component {
     constructor(props) {
@@ -18,18 +17,26 @@ class App extends React.Component {
       }
     }
     showOverlay() {
-      $(".menuOverlay").toggleClass("visible");
+      //https://stackoverflow.com/questions/22749979/is-there-a-way-to-prevent-all-actions-while-css-transition-takes-place
+      $('body').addClass('freeze');
+      $('.menuOverlay').on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+          $('body').removeClass('freeze')
+      });
+
       $('.cd-menu-icon').toggleClass('is-clicked');
-      // $('body').toggleClass("hideExcess");
+
+      if(parseInt($('.menuOverlay').css("marginLeft")) === 0){
+        $('.menuOverlay').css('margin-left', '-' + $(window).width() + 'px');
+      } else {
+        $('.menuOverlay').css('margin-left', '0');
+      }
     }
 
     render() {
-      const TRACKING_ID = "UA-122351635-1"; // YOUR_OWN_TRACKING_ID
-      ReactGA.initialize(TRACKING_ID);
       return (
         <main className = "siteContainer">
         <HBGMenu overlay={this.showOverlay}/>
-        <SlideIn/>
+        <SlideIn overlay={this.showOverlay}/>
         <Portfolio/>
         <BackgroundImage input="paris"/>
         <Bio title = {this.state.flaticon}/>

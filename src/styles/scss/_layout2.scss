@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+.freeze {
+  pointer-events: none;
+}
+
 .hideExcess {
   overflow-y: hidden;
 }

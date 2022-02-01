@@ -1,7 +1,12 @@
 import React from 'react';
+import $ from 'jquery';
 
 class HBGMenuOverlay extends React.Component {
   render() {
+    $(document).ready(() => {
+      $('.menuOverlay').css('margin-left', '-' + $(window).width() + 'px');
+    })
+
     var pages = ["Home", "Portfolio", "Bio", "About",  "Contact"];
     var doLoop = pages.map((d, i) => {
       var smallCaps = d.toLowerCase();
@@ -9,6 +14,7 @@ class HBGMenuOverlay extends React.Component {
       <div className="overlayPages" onClick={() => {
         //https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs
         this.props.clickScroll(smallCaps);
+        this.props.overlay()
       }}>{d}</div><div className="liner"></div></div>;
     });
 
