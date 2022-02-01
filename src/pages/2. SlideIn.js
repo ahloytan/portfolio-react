@@ -18,6 +18,6 @@ class SlideIn extends React.Component {
     <Home clickScroll={this.clickScrollTop}/>
     </div>)
   }
-}
+}  
 
 export default SlideIn;

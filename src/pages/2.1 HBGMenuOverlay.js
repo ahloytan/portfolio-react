@@ -2,7 +2,7 @@ import React from 'react';
 
 class HBGMenuOverlay extends React.Component {
   render() {
-    var pages = ["Home", "Bio", "About", "Portfolio", "Contact"];
+    var pages = ["Home", "Portfolio", "Bio", "About",  "Contact"];
     var doLoop = pages.map((d, i) => {
       var smallCaps = d.toLowerCase();
       return <div key={i} className="divHold">

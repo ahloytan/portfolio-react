@@ -7,6 +7,7 @@ import Bio from './pages/4. Bio.js'
 import About from './pages/5. About.js'
 import Contact from './pages/6. Contact.js'
 import BackgroundImage from './pages/BackgroundImage.js'
+import ReactGA from 'react-ga';
 
 class App extends React.Component {
     constructor(props) {
@@ -23,6 +24,8 @@ class App extends React.Component {
     }
 
     render() {
+      const TRACKING_ID = "UA-122351635-1"; // YOUR_OWN_TRACKING_ID
+      ReactGA.initialize(TRACKING_ID);
       return (
         <main className = "siteContainer">
         <HBGMenu overlay={this.showOverlay}/>

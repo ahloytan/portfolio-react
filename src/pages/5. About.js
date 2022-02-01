@@ -23,7 +23,7 @@ class About extends React.Component {
         <span className="pageTitle">ABOUT ME</span>
         <div className="aboutDesc description">
           <div>I love coding dood. I even extended my internship at Singapore Press Holdings as a Web Developer. Hmu if you need help with websites!&nbsp;
-            <a onClick={() => this.readMore()} href="/#">Read More</a>
+            <a onClick={() => this.readMore()} href="#/">Read More</a>
           </div>
           <br/>
         </div>
