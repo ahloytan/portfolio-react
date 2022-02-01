@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype"); //Previously font had problem showing because you put format as .ttf when it should be the full name, truetype
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "slick";
+  src: url("../fonts/slick.woff") format("woff"),url("../fonts/slick.ttf") format("truetype");
+  font-display: swap;
+}

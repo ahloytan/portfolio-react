@@ -1,0 +1,139 @@
+body,
+html {
+  height: 100%;
+  margin: 0 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hideExcess {
+  overflow-y: hidden;
+}
+
+.siteContainer {
+  font-family: $font-Montserrat-Regular;
+}
+
+.pageTitle {
+  font-size: 30px;
+  @include breakpoint($d_medium) {
+    font-size: 40px;
+  }
+}
+
+.activeM {
+  color: #000;
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 550px;
+  text-align: left;
+}
+/*Slick Styles*/
+.slick-next,
+.slick-prev {
+  top: 55%;
+  width: 26px;
+  height: 26px;
+  z-index: 99999;
+
+  &:before {
+    content: "";
+  }
+}
+
+.slick-prev {
+  left: -10px;
+  background: url($images_dir + "back.svg") !important;
+}
+
+.slick-next {
+  right: -10px;
+  background: url($images_dir + "front.svg") !important;
+}
+
+.slick-slide {
+  img {
+    margin: 0 auto;
+    height: 225px;
+    width: 300px;
+    @include breakpoint($d_medium) {
+      width: 360px;
+    }
+  }
+}
+/*End of Slick Styles*/
+/*Arrow down styles*/
+//codepen.io/JakubHonisek/pen/qjpeeO?__cf_chl_jschl_tk__=1aa58b60509ea2bca72796278f0156aa8faa23ab-1591430360-0-ARb6DpzpaUZ4puHYkSjnRy4ucfltH30Abr4nYzW3sp03sn5-kDDk-8gwOhGmaMuNGA7qX--jLN1NgykbESur9jw_H6ZRgnNP7FUcAcuVopOH25TqoH--wddNsUtIjsTAaygRy3aA0cpa56B6l7tI2QKXnwno5NG3lyNw5MAHE3jxvqhlISeReHawQBzbpbHGq-3k2PeWzgdjUgfBU24AX4tQz541qOFST338p2r7MOptSpgrBXDZxp2vw329xu1tRy7Unio0hTjcOuogMV3ZL0zQropG-If4cm-_mam_dz3TXWRYZA06XISYsBLSSuH84c00R0wc3XmWhfMglND5T8m652miqE-Gf08PUwjUETku
+//stackoverflow.com/questions/32626135/chrome-error-when-embedding-video-url-with-iframe
+$base: 0.6rem;
+
+.scrollHolder {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.chevron {
+  position: absolute;
+  opacity: 0;
+  bottom: 100px;
+  width: $base * 3.5;
+  height: $base * 0.8;
+  transform: scale(0.3);
+  animation: move-chevron 3s ease-out infinite;
+
+  &:first-child {
+    animation: move-chevron 3s ease-out 1s infinite;
+  }
+
+  &:nth-child(2) {
+    animation: move-chevron 3s ease-out 2s infinite;
+  }
+}
+
+.chevron:after,
+.chevron:before {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  content: '';
+  background: #FFF;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skewY(30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 51.5%;
+  transform: skewY(-30deg);
+}
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+
+  33.3% {
+    opacity: 1;
+    transform: translateY($base * 3.8);
+  }
+
+  66.6% {
+    opacity: 1;
+    transform: translateY($base * 5.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY($base * 8) scale(0.5);
+  }
+}
+/*End of Arrow down styles*/

@@ -1,0 +1,500 @@
+.header {
+  .navBar {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    @include breakpoint($d_medium) {
+      display: block;
+    }
+
+    .headerLogo {
+      margin: 25px 15% 0 20px;
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 75px;
+      max-width: 200px;
+      @include breakpoint(769px) {
+        margin: 15px 15% 0 20px;
+      }
+      @include breakpoint($d_xlarge) {
+        margin: 15px 25% 15px 15px;
+      }
+    }
+
+    div {
+      color: #666;
+      display: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: $font-Montserrat-Bold;
+      margin: 20px 50px;
+      position: relative;
+      transition: all 300ms;
+      text-transform: uppercase;
+      @include breakpoint($d_large) {
+        display: inline-block;
+      }
+
+      &:hover {
+        color: #FFF;
+      }
+
+      &::before {
+        width: 0;
+        top: 25px;
+        content: '';
+        height: 4px;
+        display: block;
+        position: absolute;
+        border-radius: 20px;
+        background-color: #fff;
+        transition: all ease-in-out 300ms;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.hamburgerMenu {
+  top: 25px;
+  right: 6%;
+  z-index: 2;
+  width: 32px;
+  height: 34px;
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  @include breakpoint($d_large) {
+    display: none;
+  }
+}
+//https://codepen.io/ridhan/pen/EjzXxN
+
+.cd-menu-icon {
+  /* this span is the central line of the menu icon */
+  z-index: 3;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  border-radius: 5px;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 32px;
+  height: 3px;
+  background-color: white;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  /* these are the upper and lower lines in the menu icon */
+}
+
+.cd-primary-nav-trigger .cd-menu-icon::before,
+.cd-primary-nav-trigger .cd-menu-icon:after {
+  right: 0;
+  width: 100%;
+  content: '';
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-transition: -webkit-transform 0.3s, top 0.3s, background-color 0s;
+  -moz-transition: -moz-transform 0.3s, top 0.3s, background-color 0s;
+  transition: transform 0.3s, top 0.3s, background-color 0s;
+}
+
+.cd-primary-nav-trigger .cd-menu-icon::before {
+  top: -10px;
+}
+
+.cd-primary-nav-trigger .cd-menu-icon::after {
+  top: 10px;
+}
+
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::after {
+  top: 0;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.menuOverlay {
+  //https://stackoverflow.com/questions/48620689/how-to-push-elements-off-screen-using-html-and-css
+  position: relative;
+  color: #fff;
+  min-width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  margin-left: -100%;
+  box-sizing: border-box;
+  transition: margin 0.4s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url($images_dir + "background/hk_mobileM.jpg");
+
+  .overlayContent {
+    padding: 3% 30px 0;
+    z-index: 3;
+
+    .overlayPages {
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .divHold {
+      margin: auto;
+      width: 35%;
+      padding: 15px 0;
+    }
+
+    .liner {
+      border-top: 2px solid white;
+      margin: 5px;
+    }
+
+    img {
+      top: 4%;
+      right: 8%;
+      z-index: 4;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      position: absolute;
+      transition: transform 0.5s;
+    }
+  }
+}
+//slide in effect
+
+.slideInHolder {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  align-items: stretch;
+
+  .visible {
+    margin-left: 0;
+  }
+}
+
+.home {
+  color: #fff;
+  min-width: 100%;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  background-image: url($images_dir + "background/swisslandM.jpg");
+
+  .tagLine {
+    height: 100px;
+    font-size: 22px;
+    padding: 20% 15px 0;
+    font-family: $font-Montserrat-Light;
+    @include breakpoint($d_medium) {
+      height: 175px;
+      padding: 0 15px;
+      font-size: 45px;
+      padding-top: 5%;
+    }
+  }
+
+  .nameJob {
+    font-size: 30px;
+    margin-top: 15%;
+    @include breakpoint($d_medium) {
+      width: 100%;
+      font-size: 50px;
+      margin-top: 70px;
+    }
+    @include breakpoint($d_xlarge) {
+      margin-top: 5%;
+    }
+
+    div {
+      width: 100%;
+      margin: 0 auto;
+      background-color: rgba(0,0,0,0.1);
+      @include breakpoint($d_medium) {
+        width: 400px;
+      }
+
+      &:first-child {
+        padding: 10px 0 5px;
+      }
+
+      &:nth-child(2) {
+        font-size: 16px;
+        padding: 5px 0 10px;
+        font-family: $font-Montserrat-Light;
+        color: rgba(255,255,255,0.9);
+        @include breakpoint($d_medium) {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+.portfolio {
+  color: #000;
+  height: 400px;
+  text-align: center;
+  padding: 20px 20px 0;
+  background-color: #F5F5F5;
+
+  p {
+    font-size: 14px;
+    @include breakpoint($d_medium) {
+      font-size: 16px;
+    }
+  }
+
+  .carouselHolder {
+    position: relative;
+  }
+
+  .carouselTitle {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .itemHolder {
+    position: relative;
+  }
+
+  .desc {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    color: #000;
+    padding-top: 25%;
+    width: 300px;
+    height: 225px;
+    display: none;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.8);
+    transform: translateY(-50%);
+    @include breakpoint($d_medium) {
+      width: 360px;
+    }
+  }
+}
+
+.about,
+.bio {
+  height: auto;
+  text-align: center;
+  background-color: #F5F5F5;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 1s linear;
+
+  .descBox {
+    color: #000;
+    padding: 15px;
+
+    .description {
+      color: #000;
+      margin: 0 auto;
+      padding: 15px 0;
+      font-size: 16px;
+      max-width: 550px;
+      text-align: left;
+      line-height: 140%;
+
+      a {
+        color: #5a9ddc;
+        background-image: linear-gradient(to bottom, transparent 85%, rgba(13,190,152,0.7) 0);
+        background-size: 0 90%;
+        background-repeat: no-repeat;
+        text-decoration: none;
+        transition: background-size 0.4s ease;
+
+        &:hover {
+          background-size: 100% 100%;
+          cursor: pointer;
+        }
+      }
+    }
+    //help.viostream.com/hc/en-us/articles/115016053247-How-to-make-your-Iframe-embed-responsive-
+    .featVidBox {
+      margin: 0 auto;
+      max-width: 550px;
+      position: relative;
+      padding-bottom: 56.25%;
+
+      .featVid {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      @include breakpoint($d_medium) {
+        width: 560px;
+        height: 310px;
+        padding-bottom: 0;
+      }
+    }
+
+    .whatILove {
+      text-align: center;
+
+      .bioBox {
+        width: 300px;
+        padding: 10px 0;
+        text-align: left;
+        display: inline-block;
+        @include breakpoint($d_medium) {
+          width: auto;
+          text-align: center;
+        }
+
+        .top2 {
+          display: inline-block;
+          vertical-align: middle;
+          @include breakpoint($d_medium) {
+            display: block;
+            padding-top: 15px;
+          }
+        }
+      }
+
+      .catHolder {
+        padding: 10px;
+        margin: 0 15px;
+        cursor: pointer;
+        border-radius: 25px;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #b0e0e6;
+        @include breakpoint($d_medium) {
+          margin: 0 50px;
+        }
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        display: block;
+        @include breakpoint($d_medium) {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  position: relative;
+  color: #000;
+  padding: 20px 15px;
+  text-align: center;
+  background-color: #F5F5F5;
+
+  a {
+    width: 30px;
+    height: 30px;
+    margin: 20px 10px;
+    display: inline-block;
+    @include breakpoint($d_medium) {
+      width: 40px;
+      height: 40px;
+      margin: 25px;
+    }
+  }
+
+  .copyRight {
+    color: #666;
+    opacity: 0.7;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 150px;
+    @include breakpoint(440px) {
+      max-width: none;
+    }
+  }
+
+  .backToTop {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+}
+
+.bgHolderhongkong {
+  .backgroundImage {
+    background-attachment: local;
+  }
+}
+
+.backgroundImage {
+  //https://pixabay.com/
+  //https://www.w3schools.com/howto/howto_css_parallax.asp
+  height: 700px;
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @include breakpoint($d_medium) {
+    height: 1000px;
+    background-attachment: fixed;
+  }
+}
+
+.style_prevu_kit {
+  position: relative;
+  border: 0;
+  width: auto;
+  height: auto;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+}
+//https://codepen.io/wifeo/pen/qzwkb
+
+.style_prevu_kit:hover {
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.25);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.25);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.25);
+  transition: all 200ms ease-in;
+  transform: scale(1.25);
+}
