@@ -146,6 +146,7 @@
   //https://stackoverflow.com/questions/48620689/how-to-push-elements-off-screen-using-html-and-css
   position: relative;
   color: #fff;
+  font-size: 18px;
   min-width: 100%;
   text-align: center;
   overflow-x: hidden;
@@ -261,7 +262,7 @@
   color: #000;
   height: 400px;
   text-align: center;
-  padding: 20px 20px 0;
+  padding: 10px 20px 0;
   background-color: #F5F5F5;
 
   p {
@@ -314,12 +315,12 @@
 
   .descBox {
     color: #000;
-    padding: 15px;
+    padding: 10px 15px;
 
     .description {
       color: #000;
       margin: 0 auto;
-      padding: 15px 0;
+      padding-top: 15px;
       font-size: 16px;
       max-width: 550px;
       text-align: left;
@@ -412,7 +413,7 @@
 .contact {
   position: relative;
   color: #000;
-  padding: 20px 15px;
+  padding: 10px 15px;
   text-align: center;
   background-color: #F5F5F5;
 

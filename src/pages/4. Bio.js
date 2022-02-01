@@ -46,7 +46,7 @@ class Bio extends React.Component {
     var categories = ["sports", "games"];
     var top2Cat = [
       ["Basketball", "League of Legends"],
-      ["Bowling","Heartstone"],
+      ["Bowling","Hearthstone"],
       ["Badminton","CS GO"]
     ];
     var doLoop = categories.map((d, i) => {
