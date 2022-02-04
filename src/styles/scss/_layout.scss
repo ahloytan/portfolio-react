@@ -150,10 +150,8 @@
   min-width: 100%;
   text-align: center;
   overflow-x: hidden;
-  margin-left: 0;
   box-sizing: border-box;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
+  transition: transform 0.6s;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -198,6 +196,11 @@
   flex-wrap: nowrap;
   overflow-x: hidden;
   align-items: stretch;
+
+  .visible {
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
 }
 
 .home {
@@ -206,6 +209,7 @@
   position: relative;
   text-align: center;
   box-sizing: border-box;
+  transition: transform 0.6s;
   background-image: url($images_dir + "background/swisslandM.jpg");
 
   .tagLine {
@@ -291,11 +295,11 @@
     left: 0;
     right: 0;
     color: #000;
-    padding-top: 25%;
     width: 300px;
     height: 225px;
     display: none;
     margin: 0 auto;
+    padding-top: 25%;
     background-color: rgba(255,255,255,0.8);
     transform: translateY(-50%);
     @include breakpoint($d_medium) {

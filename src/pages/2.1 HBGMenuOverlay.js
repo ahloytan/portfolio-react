@@ -1,12 +1,7 @@
 import React from 'react';
-import $ from 'jquery';
 
 class HBGMenuOverlay extends React.Component {
   render() {
-    $(document).ready(() => {
-      $('.menuOverlay').css('margin-left', '-' + $(window).width() + 'px');
-    })
-
     var pages = ["Home", "Portfolio", "Bio", "About",  "Contact"];
     var doLoop = pages.map((d, i) => {
       var smallCaps = d.toLowerCase();

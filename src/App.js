@@ -31,12 +31,7 @@ class App extends React.Component {
       });
 
       $('.cd-menu-icon').toggleClass('is-clicked');
-
-      if(parseInt($('.menuOverlay').css("marginLeft")) === 0){
-        $('.menuOverlay').css('margin-left', '-' + $(window).width() + 'px');
-      } else {
-        $('.menuOverlay').css('margin-left', '0');
-      }
+      $('.menuOverlay, .home').toggleClass('visible');
     }
 
     render() {

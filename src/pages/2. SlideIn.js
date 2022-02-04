@@ -13,8 +13,8 @@ class SlideIn extends React.Component {
   }
   render() {
     return (<div className="slideInHolder">
-    <HBGMenuOverlay clickScroll={this.clickScrollTop} overlay={this.props.overlay}/>
     <Home clickScroll={this.clickScrollTop}/>
+    <HBGMenuOverlay clickScroll={this.clickScrollTop} overlay={this.props.overlay}/>
     </div>)
   }
 }

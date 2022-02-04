@@ -2,17 +2,27 @@ import React from 'react';
 import $ from 'jquery';
 import Slider from "react-slick";
 
+//https://react-slick.neostack.com/docs/example/auto-play-methods/
 class Portfolio extends React.Component {
+  constructor(props) {
+    super(props);
+    this.play = this.play.bind(this);
+  }
   onHover(input) {
     $('#d' + input).toggle();
+  }
+  play() {
+   this.slider.slickPlay();
   }
   render() {
     var settings = {
       dots: true,
-      infinite: true,
       speed: 500,
+      infinite: true,
+      autoplay: true,
       slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToScroll: 3,
+      pauseOnHover: true,
       responsive: [
         {
           breakpoint: 800,
@@ -113,7 +123,7 @@ class Portfolio extends React.Component {
     return (<div className="portfolio">
     <span className="pageTitle">PORTFOLIO</span>
     <p>Click on the images to find out more!</p>
-    <Slider {...settings}>
+    <Slider ref={slider => (this.slider = slider)} {...settings}>
     {doLoop}
     </Slider>
     </div>);
