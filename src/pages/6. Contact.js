@@ -14,9 +14,9 @@ class Contact extends React.Component {
       "mailto:chewinggum222@hotmail.com",
       "https://www.youtube.com/channel/UCcl5vpu_9N6vspUF_AtMRuQ",
       "https://www.facebook.com/ATJH4",
-      "https://twitter.com/itsmeahloy"
+      "https://github.com/ahloytan?tab=repositories"
     ]
-    var socialMedia = ["instagram","linkedin","gmail","youtube","facebook","twitter"];
+    var socialMedia = ["instagram","linkedin","gmail","youtube","facebook","github"];
     var doLoop = links.map((d, i) => {
       /* https://stackoverflow.com/questions/21668025/react-jsx-access-props-in-quotes */
       return <a key={i} href={d} rel="noreferrer" target="_blank">
