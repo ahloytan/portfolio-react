@@ -14,16 +14,21 @@ class About extends React.Component {
     });
   }
   readMore() {
-    $(".aboutDesc a").remove();
-    $(".aboutDesc").append("To fuel my passion, I've been picking up skills such as Vue.Js, D3.Js, Gulp.Js, React.Js, Bootstrap & SASS. I've been mastering ways to create sustainable & reusable projects, and what better platform to show my interests than to create a personal website from scratch?!<br/><br/>", "I've also been improving on my core basics like HTML, CSS & Javascript by figuring out new and more efficient methods.<br/><br/>", "Totalling about 8 months, I was given opportunities to showcase my skills in 10 projects which you can browse through in the next section!")
+    $("#readMore").remove();
+    $(".aboutDesc").append("Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.Js, React.Js, D3.Js, Gulp.Js, Bootstrap, and SASS. For backend, I'm still learning the ropes on C#, ASP.NET Core, and Java.<br/><br/>", "A start was to create a personal website from scratch using what I've learnt and I hope to showcase more learnings in future projects!")
   }
   render() {
     return (<div className="about">
       <div className="descBox">
         <span className="pageTitle">ABOUT ME</span>
         <div className="aboutDesc description">
-          <div>I love coding dood. I even extended my internship at Singapore Press Holdings as a Web Developer. Hmu if you need help with websites!&nbsp;
-            <a onClick={() => this.readMore()} href="#/">Read More</a>
+          <div>
+            I'm an aspiring full-stack developer that enjoys coding! Recently interned at&nbsp;
+            <a href="https://surer.sg/" target="_blank" >Surer</a>
+            &nbsp;as a Backend Web Developer in 2022 Summer and at&nbsp;
+            <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank">The Straits Times</a>
+            &nbsp;as a Frontend Web Developer back in 2018. Hmu if you need help with websites!&nbsp;
+            <a id="readMore" onClick={() => this.readMore()} href="#/">Read More</a>
           </div>
           <br/>
         </div>

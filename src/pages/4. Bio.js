@@ -67,7 +67,7 @@ class Bio extends React.Component {
     return (<div className="bio">
     <div className="descBox descBioBox">
     <span className="pageTitle">MY BIO</span>
-    <div className="description"> Current SMU Information Systems undergraduate. 24 years old. I took these background images! Love me some sports, piano & games. Grateful to be featured on <a href={this.state.vidLink} rel="noreferrer" target="_blank">MINDEF</a>!</div>
+    <div className="description"> Currently a Year 3 SMU Information Systems undergraduate. 24 years old. I took these background images! Love me some sports, piano & games. Grateful to be featured on <a href={this.state.vidLink} rel="noreferrer" target="_blank">MINDEF</a>!</div>
     <div className="whatILove">
     {doLoop}
       {/*
