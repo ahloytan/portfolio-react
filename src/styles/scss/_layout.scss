@@ -9,16 +9,14 @@
     }
 
     .headerLogo {
-      margin: 25px 15% 0 20px;
+      border-radius: 50%;
+      margin: 15px 15% 0 20px;
       display: inline-block;
       vertical-align: middle;
-      min-width: 75px;
-      max-width: 200px;
-      @include breakpoint(769px) {
-        margin: 15px 15% 0 20px;
-      }
+      max-width: 75px;
+
       @include breakpoint($d_xlarge) {
-        margin: 15px 25% 15px 15px;
+        margin: 15px 25% 15px 20px;
       }
     }
 

@@ -24,9 +24,9 @@ class About extends React.Component {
         <div className="aboutDesc description">
           <div>
             I'm an aspiring full-stack developer that enjoys coding! Recently interned at&nbsp;
-            <a href="https://surer.sg/" target="_blank" >Surer</a>
+            <a href="https://surer.sg/" target="_blank" rel="noreferrer">Surer</a>
             &nbsp;as a Backend Web Developer in 2022 Summer and at&nbsp;
-            <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank">The Straits Times</a>
+            <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank" rel="noreferrer">The Straits Times</a>
             &nbsp;as a Frontend Web Developer back in 2018. Hmu if you need help with websites!&nbsp;
             <a id="readMore" onClick={() => this.readMore()} href="#/">Read More</a>
           </div>
