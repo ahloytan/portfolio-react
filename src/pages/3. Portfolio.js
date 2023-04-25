@@ -17,7 +17,7 @@ class Portfolio extends React.Component {
   render() {
     var settings = {
       dots: true,
-      speed: 1000,
+      speed: 750,
       infinite: true,
       // autoplay: true,
       slidesToShow: 4,
@@ -100,17 +100,19 @@ class Portfolio extends React.Component {
       "Tried my best to understand the orginal code because it was reused for 2016 & 2017 but it was very complicated. I learned a lot thou, it helped when I was doing other data visualisation interactives",
       "Short quiz just to see how uncle or auntie you are!",
       "First time using D3.Js extensively with some jquery/css effects. Well after it went live then I realised I made some mistakes in the code.. That's why if you look at it long enough, you'll see that it's a little buggy. Welp",
-      "Just 1 of the quizzes during the Trump-Kim Summit back in 2018 to increase traffic flow to Straits Times!",
+      "Just 1 of the quizzes during the Trump-Kim Summit back in 2018",
       "A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!",
     ]
-    var image = ["inbetween", "retweet", "gendergap","christmas","worldcup","hongbao","a-to-z","budget","premium","funquiz","holidays","whosaywhat","src"];
+    var image = ["inbetween", "retweet", "gendergap","christmas","worldcup","hongbao","a-to-z","budget","funquiz","holidays","whosaywhat","src"];
     var doLoop = title.map((d, i) => {
       return <div className="carouselHolder" key={i}>
       <div className="carouselTitle">{d}</div>
       <a href={linkDir + links[i]} rel="noreferrer" target="_blank">
       <div className="itemHolder">
         <img id={i} src={pfDir + image[i] + ".jpg"} rel="noreferrer" onMouseEnter={() => this.onHover(i)} alt={image[i]}/>
-        <div id={"d" + i} className="desc" onMouseLeave={() => this.onHover(i)}>{desc[i]}</div>
+        <div id={"d" + i} className="desc" onMouseLeave={() => this.onHover(i)}>
+          <p>{desc[i]}</p>
+        </div>
       </div>
       </a>
       </div>

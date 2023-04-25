@@ -16,9 +16,9 @@ class Header extends React.Component {
     })
     if (this.state.count === parseInt(process.env.REACT_APP_S)) {
       window.open("https://zuse.market/user/0.0.649817");
-      alert("One day you won't be an athlete anymore. You won't have that routine you do before every game. You won't have those long bus rides with your teammates. You won't have those bruises all over your body. Your teammates will become distant and your laughs will become limited. Eventually, the one thing you looked forward to will come to an end. The one thing you relied on to relieve your stress and allow you to escape your problems won't always be there. One day, you won't be an athlete anymore, you will just have the memories of one. -Anonymous");
 
     } else if (this.state.count === parseInt(process.env.REACT_APP_NUM)) {
+      alert("One day you won't be an athlete anymore. You won't have that routine you do before every game. You won't have those long bus rides with your teammates. You won't have those bruises all over your body. Your teammates will become distant and your laughs will become limited. Eventually, the one thing you looked forward to will come to an end. The one thing you relied on to relieve your stress and allow you to escape your problems won't always be there. One day, you won't be an athlete anymore, you will just have the memories of one. -Anonymous");
       $(".paraH").remove();
       var text = process.env.REACT_APP_TEXT.split("|");
 
