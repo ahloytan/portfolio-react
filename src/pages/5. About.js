@@ -23,7 +23,7 @@ class About extends React.Component {
         <span className="pageTitle">ABOUT ME</span>
         <div className="aboutDesc description">
           <div>
-            I'm an aspiring full-stack developer that enjoys coding! Recently interned at&nbsp;
+            I'm an aspiring full-stack software engineer that enjoys coding! Recently interned at&nbsp;
             <a href="https://surer.sg/" target="_blank" rel="noreferrer">Surer</a>
             &nbsp;as a Backend Web Developer in 2022 Summer and at&nbsp;
             <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank" rel="noreferrer">The Straits Times</a>
