@@ -39,7 +39,7 @@ class Header extends React.Component {
     return (<div className="header">
     <div className="navBar">
       {/*https://snowball.digital/blog/responsive-images-in-react-with-srcset*/}
-        <img className="headerLogo" src="images_doc/logo/logo.png" onClick={() => this.activate()} alt="headerLogo"/> {doLoop}
+        <img className="headerLogo" src="images_doc/logo/logo.jpg" onClick={() => this.activate()} alt="headerLogo"/> {doLoop}
       </div>
     </div>);
   }
