@@ -345,6 +345,28 @@
           cursor: pointer;
         }
       }
+
+      .experienceBox {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .experience {
+          text-align: center;
+
+          .role {
+            max-width: 100px;
+            font-weight: bold;
+          }
+          
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+          }
+        }
+      }
+
     }
     //help.viostream.com/hc/en-us/articles/115016053247-How-to-make-your-Iframe-embed-responsive-
     .featVidBox {

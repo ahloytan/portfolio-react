@@ -2,9 +2,9 @@ import React from 'react';
 
 class HBGMenuOverlay extends React.Component {
   render() {
-    var pages = ["Home", "Portfolio", "Bio", "About",  "Contact"];
-    var doLoop = pages.map((d, i) => {
-      var smallCaps = d.toLowerCase();
+    const pages = ["Home", "Portfolio", "Bio", "About",  "Contact"];
+    const doLoop = pages.map((d, i) => {
+      const smallCaps = d.toLowerCase();
       return <div key={i} className="divHold">
       <div className="overlayPages" onClick={() => {
         //https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs

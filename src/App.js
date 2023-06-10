@@ -9,8 +9,7 @@ import Contact from './pages/6. Contact.js'
 import BackgroundImage from './pages/BackgroundImage.js'
 import ReactGA from 'react-ga4';
 
-const TRACKING_ID = process.env.REACT_APP_GTAG; // YOUR_OWN_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+ReactGA.initialize(process.env.REACT_APP_GTAG); // YOUR_OWN_TRACKING_ID
 
 class App extends React.Component {
   //https://stackoverflow.com/questions/49398355/google-analytics-on-react-app-doesnt-work
@@ -41,9 +40,9 @@ class App extends React.Component {
         <SlideIn overlay={this.showOverlay}/>
         <Portfolio/>
         <BackgroundImage input="paris"/>
-        <Bio title = {this.state.flaticon}/>
-        <BackgroundImage input="rome"/>
         <About/>
+        <BackgroundImage input="rome"/>
+        <Bio title = {this.state.flaticon}/>
         <BackgroundImage input="hongkong"/>
         <Contact/>
         </main>);

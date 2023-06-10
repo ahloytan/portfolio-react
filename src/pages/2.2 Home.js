@@ -12,8 +12,8 @@ class Home extends React.Component {
     })
   }
   render() {
-    var homeBgHeight = $(window).height() + "px";
-    var homeBgStyle = {
+    const homeBgHeight = $(window).height() + "px";
+    const homeBgStyle = {
       height: homeBgHeight
     };
 

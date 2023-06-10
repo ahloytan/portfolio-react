@@ -7,8 +7,8 @@ class Contact extends React.Component {
     $("html, body").animate({scrollTop: 0}, 1500);
   }
   render() {
-    var contactDir = "images_doc/social_media/";
-    var links = [
+    const contactDir = "images_doc/social_media/";
+    const links = [
       "https://www.instagram.com/ahloytan/",
       "https://www.linkedin.com/in/aloytan/",
       "mailto:chewinggum222@hotmail.com",
@@ -16,8 +16,8 @@ class Contact extends React.Component {
       "https://www.facebook.com/ATJH4",
       "https://github.com/ahloytan?tab=repositories"
     ]
-    var socialMedia = ["instagram","linkedin","gmail","youtube","facebook","github"];
-    var doLoop = links.map((d, i) => {
+    const socialMedia = ["instagram","linkedin","gmail","youtube","facebook","github"];
+    const doLoop = links.map((d, i) => {
       /* https://stackoverflow.com/questions/21668025/react-jsx-access-props-in-quotes */
       return <a key={i} href={d} rel="noreferrer" target="_blank">
       <img className="style_prevu_kit" src={contactDir + socialMedia[i] + ".svg"} alt={socialMedia[i]} title={d}/></a>;

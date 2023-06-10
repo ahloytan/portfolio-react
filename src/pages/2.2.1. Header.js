@@ -20,7 +20,7 @@ class Header extends React.Component {
     } else if (this.state.count === parseInt(process.env.REACT_APP_NUM)) {
       alert("One day you won't be an athlete anymore. You won't have that routine you do before every game. You won't have those long bus rides with your teammates. You won't have those bruises all over your body. Your teammates will become distant and your laughs will become limited. Eventually, the one thing you looked forward to will come to an end. The one thing you relied on to relieve your stress and allow you to escape your problems won't always be there. One day, you won't be an athlete anymore, you will just have the memories of one. -Anonymous");
       $(".paraH").remove();
-      var text = process.env.REACT_APP_TEXT.split("|");
+      const text = process.env.REACT_APP_TEXT.split("|");
 
       text.forEach((s) => {
         $(".descBioBox").append("<div class='paraH activeM'>" + s + "</div>");
@@ -31,8 +31,8 @@ class Header extends React.Component {
     }
   }
   render() {
-    var pages = ["home", "portfolio", "bio", "about", "contact"]
-    var doLoop = pages.map((d, i) => {
+    const pages = ["home", "portfolio", "bio", "about", "contact"]
+    const doLoop = pages.map((d, i) => {
       return <div key={i} onClick={() => this.props.clickScroll(d)}>{d}</div>;
     });
 

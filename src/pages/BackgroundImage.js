@@ -4,8 +4,8 @@ import $ from 'jquery';
 //http://jsfiddle.net/QN9cH/1/
 class BackgroundImage extends React.Component {
   render() {
-    var bgDir = "images_doc/background/"
-    var bgImageStyle = {
+    const bgDir = "images_doc/background/"
+    const bgImageStyle = {
       backgroundImage: ($(window).width() < 1400) ? "url(" + bgDir + this.props.input + "M.jpg)" : "url(" + bgDir + this.props.input + ".jpg)"
     };
 

@@ -21,35 +21,30 @@ class Bio extends React.Component {
 
 
     $.fn.isInViewport = function() {
-      var elementTop = $(this).offset().top - ($(".descBox").height() / 2);
-      var elementBottom = elementTop + $(this).outerHeight();
-      var viewportTop = $(window).scrollTop();
-      var viewportBottom = viewportTop + $(window).height();
+      const elementTop = $(this).offset().top - ($(".descBox").height() / 2);
+      const elementBottom = elementTop + $(this).outerHeight();
+      const viewportTop = $(window).scrollTop();
+      const viewportBottom = viewportTop + $(window).height();
       return elementBottom > viewportTop && elementTop < viewportBottom;
     };
 
     $(window).on("resize scroll", function() {
-      if ($(".bio").isInViewport()){
-        $(".bio").css({
-          "visibility": "visible",
-          "opacity": "1"
-        })
-      }
+      if ($(".bio").isInViewport()) $(".bio").css({ "visibility": "visible", "opacity": "1" })
     });
 
   }
 
   render() {
-    var twitterPF = "https://twitter.com/"
-    var links = [twitterPF + "AloysiusTanJunH/status/1013065995856965632", twitterPF + "itsmeahloy/status/1421638975781969922"]
-    var bioDir = "images_doc/whatILove/";
-    var categories = ["sports", "games"];
-    var top2Cat = [
+    const twitterPF = "https://twitter.com/"
+    const links = [twitterPF + "AloysiusTanJunH/status/1013065995856965632", twitterPF + "itsmeahloy/status/1421638975781969922"]
+    const bioDir = "images_doc/whatILove/";
+    const categories = ["sports", "games"];
+    const top2Cat = [
       ["Basketball", "League of Legends"],
       ["Bowling","Hearthstone"],
       ["Badminton","CS GO"]
     ];
-    var doLoop = categories.map((d, i) => {
+    const doLoop = categories.map((d, i) => {
       return <div key={d} className="bioBox">
         <div className="catHolder style_prevu_kit">
           <a href={links[i]} rel="noreferrer" target="_blank">

@@ -15,7 +15,7 @@ class Portfolio extends React.Component {
    this.slider.slickPlay();
   }
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       speed: 750,
       infinite: true,
@@ -58,10 +58,10 @@ class Portfolio extends React.Component {
       ]
     };
 
-    var pfDir = "images_doc/carousel/";
-    var linkDir = "https://";
-    var straitsTimes = "graphics.straitstimes.com/STI/STIMEDIA/Interactives/";
-    var data = [
+    const pfDir = "images_doc/carousel/";
+    const linkDir = "https://";
+    const straitsTimes = "graphics.straitstimes.com/STI/STIMEDIA/Interactives/";
+    const data = [
       {
         title: "Twitter Retweet Bot",
         link: "github.com/ahloytan/twitter-retweet-bot",
@@ -136,7 +136,7 @@ class Portfolio extends React.Component {
       },
     ]
 
-    var doLoop = data.map((d, i) => {
+    const doLoop = data.map((d, i) => {
       return <div className="carouselHolder" key={i}>
       <div className="carouselTitle">{d.title}</div>
       <a href={linkDir + d.link} rel="noreferrer" target="_blank">
