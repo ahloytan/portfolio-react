@@ -1,5 +1,6 @@
 body,
 html {
+  cursor: none;
   height: 100%;
   margin: 0 !important;
   -webkit-overflow-scrolling: touch;
@@ -41,7 +42,7 @@ body {
   top: 55%;
   width: 26px;
   height: 26px;
-  z-index: 99999;
+  z-index: 5;
 
   &:before {
     content: "";

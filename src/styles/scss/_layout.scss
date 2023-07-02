@@ -1,3 +1,60 @@
+.cursor {
+	.cursor--small,
+	.cursor--large,
+	.cursor--text {
+		position: fixed;
+		left: 0;
+		top: 0;
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		width: var(--cursor-size);
+		height: var(--cursor-size);
+		mix-blend-mode: difference;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.cursor--text {
+		--cursor-size: fit-content;
+		font-size: 0.75rem;
+		color: #fff;
+		opacity: 0;
+		.text {
+			font-family: sans-serif;
+			font-weight: bold;
+		}
+	}
+
+	.cursor--small {
+		--cursor-size: 20px;
+		background: #fff;
+	}
+
+	.cursor--large {
+		--cursor-size: 60px;
+		border: 2px solid #fff;
+	}
+}
+
+.support {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	padding: 10px;
+	display: flex;
+	a {
+		margin: 0 15px;
+		color: #fff;
+		font-size: 1.8rem;
+		backface-visibility: hidden;
+		transition: all 150ms ease;
+		mix-blend-mode: difference;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
 .header {
   .navBar {
     width: 100%;
@@ -14,16 +71,26 @@
       display: inline-block;
       vertical-align: middle;
       max-width: 75px;
-
+      animation: rotate 4s infinite linear;
+      
       @include breakpoint($d_xlarge) {
         margin: 15px 25% 15px 20px;
+      }
+    }
+
+    
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
       }
     }
 
     div {
       color: #666;
       display: none;
-      cursor: pointer;
       font-size: 14px;
       font-family: $font-Montserrat-Bold;
       margin: 20px 50px;
@@ -64,7 +131,6 @@
   width: 32px;
   height: 34px;
   padding: 5px;
-  cursor: pointer;
   position: absolute;
   @include breakpoint($d_large) {
     display: none;
@@ -470,10 +536,12 @@
   }
 
   .backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     width: 40px;
     height: 40px;
     cursor: pointer;
-    margin-top: 10px;
   }
 }
 
