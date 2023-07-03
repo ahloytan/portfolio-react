@@ -6,15 +6,16 @@ import Bio from './pages/Bio.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import BackgroundImage from './pages/components/BackgroundImage.jsx'
-// import ReactGA from 'react-ga4';
+import ReactGA from 'react-ga4';
 import AnimatedCursor from './pages/components/cursor.jsx';
 
 const App = () => {
   const [flaticon] = useState('https://www.flaticon.com/');
+  const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
-    // ReactGA.initialize(import.meta.env.VITE_GTAG);
-    // ReactGA.send("pageview");
+    ReactGA.initialize(import.meta.env.VITE_GTAG);
+    ReactGA.send("pageview");
   }, []);
 
   const showOverlay = () => {
@@ -31,20 +32,20 @@ const App = () => {
     });
   };
 
-  return (
-    <main className="siteContainer">
-      <AnimatedCursor/>
-      <HBGMenu overlay={showOverlay}/>
-      <SlideIn overlay={showOverlay}/>
-      <Portfolio/>
-      <BackgroundImage input="paris"/>
-      <About/>
-      <BackgroundImage input="rome"/>
-      <Bio title = {flaticon}/>
-      <BackgroundImage input="hongkong"/>
-      <Contact/>
-    </main>
-  );
+  const components = [
+    !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
+    <HBGMenu overlay={showOverlay} key="HBGMenu"/>,
+    <SlideIn overlay={showOverlay} key="SlideIn"/>,
+    <Portfolio key="Portfolio"/>,
+    <BackgroundImage input="paris" key="Paris"/>,
+    <About key="About"/>,
+    <BackgroundImage input="rome" key="Rome"/>,
+    <Bio title={flaticon} key="Bio"/>,
+    <BackgroundImage input="hongkong" key="Hongkong"/>,
+    <Contact key="Contact"/>
+  ];
+
+  return <main className="siteContainer">{components}</main>;
 };
 
 export default App;

@@ -26,7 +26,7 @@ const Contact = () => {
     <div className="contact">
       <span className="pageTitle">CONTACT ME</span>
       <div className="socialMediaHolder">{doLoop}</div>
-      <div className="copyRight">Coded in Singapore | &copy;2023 Aloysius Tan | All Rights Reserved.</div>
+      <div className="copyRight">Coded in Singapore | &copy;2023 Aloysius Tan | All Rights Reserved</div>
       <img onClick={backToTop} className="backToTop" src="assets/backToTop.svg" alt="backToTop" />
     </div>
   );

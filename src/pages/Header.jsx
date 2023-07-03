@@ -28,7 +28,7 @@ const Header = ({ clickScroll }) => {
     }
   };
 
-  const pages = ["home", "portfolio", "bio", "about", "contact"];
+  const pages = ["portfolio", "bio", "about", "contact"];
   const doLoop = pages.map((d, i) => (
     <div key={i} onClick={() => clickScroll(d)}>
       {d}
@@ -44,6 +44,9 @@ const Header = ({ clickScroll }) => {
           onClick={activate}
           alt="headerLogo"
         />
+        <a target="_blank" href="https://s3-ap-southeast-1.amazonaws.com/glints-dashboard/resume/ba9c26afb676a3841f6586bf4c167ad0.pdf">
+          <div>Résumé</div>
+        </a>
         {doLoop}
       </div>
     </div>

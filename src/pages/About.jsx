@@ -44,7 +44,7 @@ const About = () => {
       readMoreElement.remove();
       aboutDescElement.insertAdjacentHTML(
         'beforeend',
-        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.Js, React.Js, D3.Js, Gulp.Js, Bootstrap, Tailwind, and SSS. For backend, I'm still learning the ropes on Node.js, Express.js, C#, ASP.NET Core, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I hope to showcase more learnings in future projects!"
+        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.Js, React.Js, D3.Js, Gulp.Js, Bootstrap, Tailwind, and Vuetify. For backend, I'm still learning the ropes on Node.js, Express.js, C#, ASP.NET Core, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I hope to showcase more learnings in future projects!"
       );
     }
   };
