@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
   const backToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(!isHovered);
   };
 
   const contactDir = 'assets/social_media/';
@@ -26,8 +32,11 @@ const Contact = () => {
     <div className="contact">
       <span className="pageTitle">CONTACT ME</span>
       <div className="socialMediaHolder">{doLoop}</div>
+
       <div className="copyRight">Coded in Singapore | &copy;2023 Aloysius Tan | All Rights Reserved</div>
-      <img onClick={backToTop} className="backToTop" src="assets/backToTop.svg" alt="backToTop" />
+      <div className="backToTop" onClick={backToTop} onMouseEnter={handleHover} onMouseLeave={handleHover}>
+        {isHovered ? '🀜' : '🀅'}
+      </div>
     </div>
   );
 };

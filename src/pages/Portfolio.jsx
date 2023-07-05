@@ -133,10 +133,10 @@ const Portfolio = () => {
   ];
 
   const doLoop = data.map((d, i) => (
-    <div className="carouselHolder" key={i}>
-      <div className="carouselTitle">{d.title}</div>
+    <div className="relative" key={i}>
+      <div className="text-base p-1.5">{d.title}</div>
       <a href={linkDir + d.link} rel="noreferrer" target="_blank">
-        <div className="itemHolder">
+        <div className="relative">
           <img
             id={i}
             src={pfDir + d.img + '.jpg'}

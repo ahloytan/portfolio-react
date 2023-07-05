@@ -36,25 +36,6 @@
 	}
 }
 
-.support {
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-	padding: 10px;
-	display: flex;
-	a {
-		margin: 0 15px;
-		color: #fff;
-		font-size: 1.8rem;
-		backface-visibility: hidden;
-		transition: all 150ms ease;
-		mix-blend-mode: difference;
-		&:hover {
-			transform: scale(1.1);
-		}
-	}
-}
-
 .header {
   .navBar {
     width: 100%;
@@ -295,37 +276,16 @@
   }
 
   .nameJob {
-    font-size: 30px;
-    margin-top: 15%;
-    @include breakpoint($d_medium) {
-      width: 100%;
-      font-size: 50px;
-      margin-top: 70px;
-    }
-    @include breakpoint($d_xlarge) {
-      margin-top: 5%;
-    }
-
     div {
-      width: 100%;
       margin: 0 auto;
       background-color: rgba(0,0,0,0.1);
       @include breakpoint($d_medium) {
         width: 400px;
       }
 
-      &:first-child {
-        padding: 10px 0 5px;
-      }
-
       &:nth-child(2) {
-        font-size: 16px;
-        padding: 5px 0 10px;
         font-family: $font-Montserrat-Light;
         color: rgba(255,255,255,0.9);
-        @include breakpoint($d_medium) {
-          font-size: 25px;
-        }
       }
     }
   }
@@ -343,19 +303,6 @@
     @include breakpoint($d_medium) {
       font-size: 16px;
     }
-  }
-
-  .carouselHolder {
-    position: relative;
-  }
-
-  .carouselTitle {
-    padding: 5px;
-    font-size: 16px;
-  }
-
-  .itemHolder {
-    position: relative;
   }
 
   .desc {
@@ -541,11 +488,10 @@
   }
 
   .backToTop {
+    font-size: 40px;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
     cursor: pointer;
   }
 }
