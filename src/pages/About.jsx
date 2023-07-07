@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { isInViewport } from '../mixins/helper';
 
 const About = () => {
   useEffect(() => {
@@ -88,14 +89,6 @@ const About = () => {
       </div>
     </div>
   );
-};
-
-const isInViewport = (element) => {
-  const elementTop = element.offsetTop - element.offsetHeight / 2;
-  const elementBottom = elementTop + element.offsetHeight;
-  const viewportTop = window.pageYOffset;
-  const viewportBottom = viewportTop + window.innerHeight;
-  return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
 export default About;

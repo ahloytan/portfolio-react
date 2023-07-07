@@ -18,10 +18,6 @@ body {
   overflow-y: hidden;
 }
 
-.siteContainer {
-  font-family: $font-Montserrat-Regular;
-}
-
 .pageTitle {
   font-size: 30px;
   @include breakpoint($d_medium) {

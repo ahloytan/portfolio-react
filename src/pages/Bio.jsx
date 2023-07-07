@@ -1,17 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-
-const isInViewport = (element) => {
-  const elementTop = element.offsetTop - (window.innerHeight / 2);
-  const elementBottom = elementTop + element.offsetHeight;
-  const viewportTop = window.scrollY;
-  const viewportBottom = viewportTop + window.innerHeight;
-  return elementBottom > viewportTop && elementTop < viewportBottom;
-};
+import { isInViewport } from '../mixins/helper';
 
 const Bio = () => {
   const vidLink = "https://youtu.be/0hdJsfbxzTU";
-  // const sportsLink = "https://twitter.com/AloysiusTanJunH/status/1013065995856965632";
-  // const gamesLink = "https://twitter.com/AloysiusTanJunH/status/1198536389207289857";
 
   const bioRef = useRef(null);
   const descBoxRef = useRef(null);

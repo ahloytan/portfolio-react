@@ -6,9 +6,7 @@ const Portfolio = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const sliderRef = useRef(null);
 
-  const onHover = (index) => {
-    setHoveredItem(index === hoveredItem ? null : index);
-  };
+  const onHover = (index) => setHoveredItem(index === hoveredItem ? null : index);
 
   const settings = {
     dots: true,

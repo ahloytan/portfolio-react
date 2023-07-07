@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'm-light': ['Montserrat-Light', 'sans-serif'],
+        'm-reg': ['Montserrat-Regular', 'sans-serif'],
+        'm-bold': ['Montserrat-Bold', 'sans-serif'],
+      },
+    },
+    colors: {
+      'custom-grey': '#666'
+    }
   },
   plugins: [],
+  
 }
