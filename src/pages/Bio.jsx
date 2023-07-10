@@ -1,28 +1,13 @@
-import React, { useEffect, useRef } from 'react';
-import { isInViewport } from '../mixins/helper';
+import React, { useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 const Bio = () => {
+  const isDarkMode = useSelector((state) => state.app.isDarkMode);
   const vidLink = "https://youtu.be/0hdJsfbxzTU";
-
+  const font = isDarkMode ? 'text-white' : 'text-black';
+  const bg = isDarkMode ? 'bg-dark' : 'bg-light';
   const bioRef = useRef(null);
   const descBoxRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isInViewport(bioRef.current)) {
-        bioRef.current.style.visibility = "visible";
-        bioRef.current.style.opacity = "1";
-      }
-    };
-
-    window.addEventListener("resize", handleScroll);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleScroll);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const twitterPF = "https://twitter.com/";
   const links = [twitterPF + "AloysiusTanJunH/status/1013065995856965632", twitterPF + "itsmeahloy/status/1421638975781969922"];
@@ -49,25 +34,8 @@ const Bio = () => {
     </div>
   ));
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (bioRef.current && isInViewport(bioRef.current)) {
-        bioRef.current.style.visibility = 'visible';
-        bioRef.current.style.opacity = '1';
-      }
-    };
-
-    window.addEventListener('resize', handleScroll);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleScroll);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
-    <div className="bio" ref={bioRef}>
+    <div className={`bio ${bg} ${font}`} ref={bioRef}>
       <div className="descBox descBioBox" ref={descBoxRef}>
         <span className="pageTitle">MY BIO</span>
         <div className="description">

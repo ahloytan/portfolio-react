@@ -4,7 +4,7 @@ const BackgroundImage = ({ input }) => {
   const backgroundImageRef = useRef(null);
 
   useEffect(() => {
-    const bgDir = "../assets/background/";
+    const bgDir = "assets/background/";
     const bgImageStyle = `url(${bgDir}${input}${window.innerWidth <= 768 ? "M" : ""}.jpg)`;
 
     if (backgroundImageRef.current) {

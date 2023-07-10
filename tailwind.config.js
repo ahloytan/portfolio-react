@@ -11,10 +11,14 @@ export default {
         'm-reg': ['Montserrat-Regular', 'sans-serif'],
         'm-bold': ['Montserrat-Bold', 'sans-serif'],
       },
+      colors: {
+        'custom-grey': '#666'
+      },
+      backgroundColor: {
+        'light': '#F5F5F5',
+        'dark': '#2B2B2B'
+      }
     },
-    colors: {
-      'custom-grey': '#666'
-    }
   },
   plugins: [],
   

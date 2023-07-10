@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Header from './Header.jsx';
 import Typewriter from 'typewriter-effect';
+import { fontColor } from '../mixins/helper.jsx';
 
 const Home = ({ clickScroll }) => {
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
+  const font = fontColor(isDarkMode);
 
   useEffect(() => {
     const landscapeCheck = () => {
@@ -19,20 +21,16 @@ const Home = ({ clickScroll }) => {
     return () => window.removeEventListener('resize', landscapeCheck);
   }, []);
 
-  const homeBgHeight = window.innerHeight + 'px';
   const homeBgStyle = {
-    height: homeBgHeight,
-    backgroundImage: `url('../assets/background/${isDarkMode ? 'bali' : 'swissland'}.jpg')`,
+    height: window.innerHeight + 'px',
+    backgroundImage: `url('assets/background/${isDarkMode ? 'bali' : 'swissland'}.jpg')`,
   };
 
   return (
     <div className="home backgroundImage" style={homeBgStyle}>
       <Header clickScroll={clickScroll}/>
       <div id="container"></div>
-      <div className="tagLine font-m-light">
-        <div className="tagLineBorderHolder">
-          <span className="tagLineBorder"></span>&nbsp;
-        </div>
+      <div className={`tagLine mt-16 font-m-light ${font}`}>
         <div>
           <Typewriter
             options={{
@@ -51,9 +49,9 @@ const Home = ({ clickScroll }) => {
           />
         </div>
       </div>
-      <div className="nameJob mt-32 md:mt-64 w-auto md:w-100">
-        <div className="text-3xl md:text-5xl py-2.5">ALOYSIUS TAN</div>
-        <div className="text-base md:text-2xl pb-2.5 font-m-light">WEB DEVELOPER</div>
+      <div className="nameJob mt-32 md:mt-48 w-auto md:w-100">
+        <div className={`text-3xl md:text-5xl py-2.5 ${font}`}>ALOYSIUS TAN</div>
+        <div className={`text-base md:text-2xl pb-2.5 font-m-light ${font}`}>WEB DEVELOPER</div>
       </div>
       <div className="scrollHolder">
         <div className="chevron"></div>

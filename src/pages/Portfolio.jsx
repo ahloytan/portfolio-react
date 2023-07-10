@@ -1,8 +1,12 @@
 import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
+import { useSelector } from 'react-redux';
 
 //https://react-slick.neostack.com/docs/example/auto-play-methods/
 const Portfolio = () => {
+  const isDarkMode = useSelector((state) => state.app.isDarkMode);
+  const font = isDarkMode ? 'text-white' : 'text-black';
+  const bg = isDarkMode ? 'bg-dark' : 'bg-light';
   const [hoveredItem, setHoveredItem] = useState(null);
   const sliderRef = useRef(null);
 
@@ -154,7 +158,7 @@ const Portfolio = () => {
   ));
 
   return (
-    <div className="portfolio">
+    <div id="scrollContainer" className={`portfolio ${font} ${bg}`}>
       <span className="pageTitle">PORTFOLIO</span>
       <p>Click on the images to find out more!</p>
       <Slider ref={sliderRef} {...settings}>

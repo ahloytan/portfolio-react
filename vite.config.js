@@ -9,7 +9,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      assets: "../../public",
+      assets: "../../build",
     },
   },
 })

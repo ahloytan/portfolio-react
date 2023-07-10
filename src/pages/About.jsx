@@ -1,24 +1,10 @@
-import React, { useEffect } from 'react';
-import { isInViewport } from '../mixins/helper';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const About = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const aboutElement = document.querySelector('.about');
-      if (aboutElement && isInViewport(aboutElement)) {
-        aboutElement.style.visibility = 'visible';
-        aboutElement.style.opacity = '1';
-      }
-    };
-
-    window.addEventListener('resize', handleScroll);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleScroll);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const isDarkMode = useSelector((state) => state.app.isDarkMode);
+  const font = isDarkMode ? 'text-white' : 'text-black';
+  const bg = isDarkMode ? 'bg-dark' : 'bg-light';
 
   const data = [
     {
@@ -32,7 +18,7 @@ const About = () => {
       link: 'https://www.linkedin.com/company/surersg/',
     },
     {
-      image: 'straitstimes.png',
+      image: 'straitstimes.jpg',
       role: 'Frontend Developer',
       link: 'https://graphics.straitstimes.com/STI/STIMEDIA/Interactives/2018/06/ST-World-Cup-VRGame/index.html',
     },
@@ -51,17 +37,17 @@ const About = () => {
   };
 
   return (
-    <div className="about">
+    <div className={`about ${font} ${bg}`}>
       <div className="descBox">
         <span className="pageTitle">EXPERIENCE</span>
         <div className="aboutDesc description">
-          <div className="experienceBox">
+          <div className="experienceBox flex justify-between mb-8">
             {data.map((d, index) => (
-              <div className="experience" key={index}>
+              <div className="experience text-center" key={index}>
                 <a href={d.link} target="_blank" rel="noreferrer">
-                  <img src={'assets/experience/' + d.image} alt={d.image} />
+                  <img className="mx-auto h-20 w-20 rounded-full" src={'assets/experience/' + d.image} alt={d.image} />
                 </a>
-                <div className="role">{d.role}</div>
+                <div className="role font-bold">{d.role}</div>
               </div>
             ))}
           </div>

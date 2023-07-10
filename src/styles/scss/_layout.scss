@@ -37,6 +37,7 @@
 }
 
 .header {
+
   .navBar {
     text-align: left;
     position: relative;
@@ -46,11 +47,6 @@
       vertical-align: middle;
       max-width: 75px;
       animation: rotate 4s infinite linear;
-
-      @include breakpoint($d_medium) {
-        max-width: 100px;
-      }
-
     }
 
     
@@ -67,10 +63,6 @@
   .navLinks {
       position: relative;
       transition: all 300ms;
-
-      &:hover {
-        color: #FFF;
-      }
   
       &::before {
         width: 0;
@@ -80,7 +72,7 @@
         display: block;
         position: absolute;
         border-radius: 20px;
-        background-color: #fff;
+        background-color: rgba(16, 223, 178, 0.7);
         transition: all ease-in-out 300ms;
       }
   
@@ -98,9 +90,6 @@
   height: 34px;
   padding: 5px;
   position: absolute;
-  @include breakpoint($d_large) {
-    display: none;
-  }
 }
 //https://codepen.io/ridhan/pen/EjzXxN
 
@@ -245,41 +234,30 @@
   text-align: center;
   box-sizing: border-box;
   transition: transform 0.6s;
-  // background-image: url($images_dir + "background/swisslandM.jpg");
 
   .tagLine {
-    height: 100px;
+    height: 50px;
     font-size: 22px;
-    padding: 20% 15px 0;
     @include breakpoint($d_medium) {
-      height: 175px;
-      padding: 0 15px;
       font-size: 45px;
-      padding-top: 5%;
     }
   }
 
   .nameJob {
     div {
       margin: 0 auto;
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(255,255,255,0.1);
       @include breakpoint($d_medium) {
         width: 400px;
-      }
-
-      &:nth-child(2) {
-        color: rgba(255,255,255,0.9);
       }
     }
   }
 }
 
 .portfolio {
-  color: #000;
   height: 400px;
   text-align: center;
   padding: 10px 20px 0;
-  background-color: #F5F5F5;
 
   p {
     font-size: 14px;
@@ -293,7 +271,6 @@
     top: 50%;
     left: 0;
     right: 0;
-    color: #000;
     width: 300px;
     height: 225px;
     display: none;
@@ -315,17 +292,11 @@
 .bio {
   height: auto;
   text-align: center;
-  background-color: #F5F5F5;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 1s linear;
 
   .descBox {
-    color: #000;
     padding: 10px 15px;
 
     .description {
-      color: #000;
       margin: 0 auto;
       padding-top: 15px;
       font-size: 16px;
@@ -347,25 +318,8 @@
         }
       }
 
-      .experienceBox {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-
-        .experience {
-          text-align: center;
-
-          .role {
-            max-width: 100px;
-            font-weight: bold;
-          }
-          
-          img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-          }
-        }
+      .role {
+        max-width: 100px;
       }
 
     }
@@ -441,10 +395,8 @@
 
 .contact {
   position: relative;
-  color: #000;
   padding: 10px 15px;
   text-align: center;
-  background-color: #F5F5F5;
 
   a {
     width: 30px;
@@ -459,7 +411,6 @@
   }
 
   .copyRight {
-    color: #666;
     opacity: 0.7;
     font-size: 14px;
     text-align: center;
@@ -476,12 +427,6 @@
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-  }
-}
-
-.bgHolderhongkong {
-  .backgroundImage {
-    background-attachment: local;
   }
 }
 
@@ -525,4 +470,41 @@
   -moz-transform: scale(1.25);
   transition: all 200ms ease-in;
   transform: scale(1.25);
+}
+
+//Loading Screen
+.loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: spin 1.5s linear infinite;
+  border: 4px solid #f3f3f3; /* Outline color */
+  border-top: 4px solid #3498db; /* Spinner color */
+  border-radius: 50%;
+}
+
+.loader__outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #f3f3f3; /* Outline color */
+}
+
+.loader__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 8px); /* Take up the inner circle with a small padding */
+  height: calc(100% - 8px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
