@@ -1,6 +1,7 @@
 import React from 'react';
 import HBGMenuOverlay from './HBGMenuOverlay.jsx';
 import Home from './Home.jsx';
+import { isMobile } from '../mixins/helper.jsx';
 
 const SlideIn = ({ overlay }) => {
   const clickScrollTop = (whichPage) => {
@@ -19,7 +20,7 @@ const SlideIn = ({ overlay }) => {
   return (
     <div className="slideInHolder">
       <Home clickScroll={clickScrollTop} />
-      <HBGMenuOverlay clickScroll={clickScrollTop} overlay={overlay} />
+      {isMobile && <HBGMenuOverlay clickScroll={clickScrollTop} overlay={overlay} />}
     </div>
   );
 };

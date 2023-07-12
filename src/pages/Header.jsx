@@ -52,7 +52,7 @@ const Header = ({ clickScroll }) => {
         <img className="headerLogo m-4" src="assets/logo/logo.jpg" onClick={activate} alt="headerLogo" />
       </div>
       <div className="text-sm hidden md:inline-flex items-center text-sm uppercase">
-        <a className={`mx-4 lg:mx-6 xl:mx-12 navLinks font-m-bold ${font}`} target="_blank" href="https://s3-ap-southeast-1.amazonaws.com/glints-dashboard/resume/ba9c26afb676a3841f6586bf4c167ad0.pdf" rel="noreferrer">
+        <a className={`mx-4 lg:mx-6 xl:mx-12 navLinks font-m-bold ${font}`} target="_blank" href="https://s3-ap-southeast-1.amazonaws.com/glints-dashboard/resume/907631bd73afd16ceaeb26476c9dd4e2.pdf" rel="noreferrer">
           <div>Résumé</div>
         </a>
         {doLoop}
@@ -62,7 +62,7 @@ const Header = ({ clickScroll }) => {
           </div>
           <label className="relative inline-flex mx-1">
             <input type="checkbox" value="" className="sr-only peer" checked={isDarkMode} onChange={handleToggleInput}/>
-            <div className="w-11 h-6 bg-light peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-dark"></div>
+            <div className="w-11 h-6 bg-light peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-dark peer-checked:after:border-gray-300"></div>
           </label>
           <div>  
             <DarkModeIcon />

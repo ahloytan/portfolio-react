@@ -3,7 +3,7 @@
   import ReactGA from 'react-ga4';
 
   import HBGMenu from './pages/HBGMenu.jsx';
-  import SlideIn from './pages/SlideIn.jsx';
+  const SlideIn = lazy(() => import('./pages/SlideIn.jsx'));
   const Portfolio = lazy(() => import('./pages/Portfolio.jsx'));
   const Bio = lazy(() => import('./pages/Bio.jsx'));
   const About = lazy(() => import('./pages/About.jsx'));
@@ -12,12 +12,11 @@
 
   import LoadingScreen from './components/LoadingScreen.jsx'
   import AnimatedCursor from './components/cursor.jsx';
-  import { showLoadingScreen } from './mixins/helper.jsx';
+  import { showLoadingScreen, isMobile } from './mixins/helper.jsx';
 
 
   const App = () => {
     const dispatch = useDispatch();
-    const isMobile = window.innerWidth <= 768;
     const isDarkMode = useSelector((state) => state.app.isDarkMode);
     const isLoading = useSelector((state) => state.app.loading);
 
@@ -48,8 +47,8 @@
     const components = [
       isLoading && <LoadingScreen key="LoadingScreen" />,
       !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
-      <HBGMenu overlay={showOverlay} key="HBGMenu"/>,
-      <SlideIn overlay={showOverlay} key="SlideIn"/>,
+      isMobile && <HBGMenu overlay={showOverlay} key="HBGMenu"/>,
+      withSuspense(SlideIn, "SlideIn", {showOverlay}),
       withSuspense(Portfolio, "Portfolio"),
       withSuspense(BackgroundImage, "Paris", { input: isDarkMode ? "hongkong-night" : "paris" }),
       withSuspense(About, "About"),

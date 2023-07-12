@@ -21,6 +21,8 @@ const showLoadingScreen = (dispatch) => {
   
     return () => clearTimeout(timer);
 };
+
+const isMobile = window.innerWidth <= 768;
   
-export {isInViewport, fontColor, showLoadingScreen}
+export {isInViewport, fontColor, showLoadingScreen, isMobile}
   
