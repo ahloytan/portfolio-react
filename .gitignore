@@ -14,7 +14,7 @@ dist-ssr
 
 # production
 /build
-/public
+# /public
 
 # Editor directories and files
 .vscode/*
