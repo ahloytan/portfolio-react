@@ -1,5 +1,5 @@
   import React, { useEffect, lazy, Suspense } from 'react';
-  import { useSelector, useDispatch } from 'react-redux';
+  import { useSelector } from 'react-redux';
   import ReactGA from 'react-ga4';
 
   import HBGMenu from './pages/HBGMenu.jsx';
@@ -12,19 +12,19 @@
 
   import LoadingScreen from './components/LoadingScreen.jsx'
   import AnimatedCursor from './components/cursor.jsx';
-  import { showLoadingScreen, isMobile } from './mixins/helper.jsx';
+  import { isMobile } from './mixins/helper.jsx';
 
 
   const App = () => {
-    const dispatch = useDispatch();
     const isDarkMode = useSelector((state) => state.app.isDarkMode);
     const isLoading = useSelector((state) => state.app.loading);
 
     useEffect(() => {
+      window.history.scrollRestoration = 'manual';
       ReactGA.initialize(import.meta.env.VITE_GTAG);
       ReactGA.send("pageview");
 
-      return showLoadingScreen(dispatch);
+      document.documentElement.style.overflow = "hidden";
     }, []);
 
     const showOverlay = () => {
@@ -45,7 +45,7 @@
     );
 
     const components = [
-      isLoading && <LoadingScreen key="LoadingScreen" />,
+      isLoading && <LoadingScreen key="LoadingScreen"/>,
       !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
       isMobile && <HBGMenu overlay={showOverlay} key="HBGMenu"/>,
       withSuspense(SlideIn, "SlideIn", {showOverlay}),

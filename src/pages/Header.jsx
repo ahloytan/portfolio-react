@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleInput, toggleLoadingScreen } from '../store/index.jsx';
+import { toggleInput } from '../store/index.jsx';
 import LightModeIcon  from '../components/LightModeIcon.jsx'; // Adjust the file path if necessary
 import DarkModeIcon  from '../components/DarkModeIcon.jsx'; // Adjust the file path if necessary
-import { fontColor, showLoadingScreen } from '../mixins/helper.jsx';
+import { fontColor } from '../mixins/helper.jsx';
 
 
 const Header = ({ clickScroll }) => {
   const [count, setCount] = useState(1);
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
-  const isLoading = useSelector((state) => state.app.loading);
   const dispatch = useDispatch();
   const font = fontColor(isDarkMode);
   const handleToggleInput = () => {
     dispatch(toggleInput(!isDarkMode)); 
-    // dispatch(toggleLoadingScreen(true));
-    // showLoadingScreen(dispatch);
   };
 
   const activate = () => {

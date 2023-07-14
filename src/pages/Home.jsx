@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Header from './Header.jsx';
 import Typewriter from 'typewriter-effect';
-import { fontColor } from '../mixins/helper.jsx';
+import { showLoadingScreen, fontColor } from '../mixins/helper.jsx';
+
 
 const Home = ({ clickScroll }) => {
+  const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
   const font = fontColor(isDarkMode);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     const landscapeCheck = () => {
       if (window.innerHeight < window.innerWidth && window.innerHeight < 421) {
         const nameJobElements = document.querySelectorAll('.nameJob, .scrollHolder');
-        nameJobElements.forEach((element) => element.style.display = 'none');
+        nameJobElements.forEach((element) => (element.style.display = 'none'));
       }
     };
     landscapeCheck();
@@ -21,6 +24,24 @@ const Home = ({ clickScroll }) => {
     return () => window.removeEventListener('resize', landscapeCheck);
   }, []);
 
+  useEffect(() => {
+    if (imageRef.current) {
+      imageRef.current.addEventListener('load', handleImageLoad);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        imageRef.current.removeEventListener('load', handleImageLoad);
+
+      }
+    };
+  }, []);
+
+  const handleImageLoad = () => {
+    document.documentElement.style.overflowY = 'scroll'; // Re-enable scrolling
+    return showLoadingScreen(dispatch);
+  };
+
   const homeBgStyle = {
     height: window.innerHeight + 'px',
     backgroundImage: `url('assets/background/${isDarkMode ? 'bali' : 'swissland'}.jpg')`,
@@ -28,7 +49,7 @@ const Home = ({ clickScroll }) => {
 
   return (
     <div className="home backgroundImage" style={homeBgStyle}>
-      <Header clickScroll={clickScroll}/>
+      <Header clickScroll={clickScroll} />
       <div id="container"></div>
       <div className={`tagLine mt-16 font-m-light ${font}`}>
         <div>
@@ -58,6 +79,12 @@ const Home = ({ clickScroll }) => {
         <div className="chevron"></div>
         <div className="chevron"></div>
       </div>
+      <img
+        ref={imageRef}
+        src={`assets/background/${isDarkMode ? 'bali' : 'swissland'}.jpg`}
+        alt={isDarkMode ? 'Bali' : 'Swissland'}
+        style={{ display: 'none' }} // Optional: Hide the image from the DOM
+      />
     </div>
   );
 };

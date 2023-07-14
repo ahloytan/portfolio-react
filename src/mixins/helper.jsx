@@ -13,13 +13,7 @@ const fontColor = (isDarkMode) => {
 };
 
 const showLoadingScreen = (dispatch) => {
-    document.body.style.overflowY = 'hidden';
-    const timer = setTimeout(() => {
-      document.body.style.overflowY = 'scroll'; // Re-enable scrolling
-      dispatch(toggleLoadingScreen(false));
-    }, 1000);
-  
-    return () => clearTimeout(timer);
+    dispatch(toggleLoadingScreen(false));
 };
 
 const isMobile = window.innerWidth <= 768;
