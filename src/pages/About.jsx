@@ -37,7 +37,7 @@ const About = () => {
   };
 
   return (
-    <div className={`about ${font} ${bg}`}>
+    <div id="about" className={`about ${font} ${bg}`}>
       <div className="descBox">
         <span className="pageTitle">EXPERIENCE</span>
         <div className="aboutDesc description">

@@ -27,7 +27,7 @@
       document.documentElement.style.overflow = "hidden";
     }, []);
 
-    const showOverlay = () => {
+    const overlay = () => {
       // Freeze body during transition
       document.body.classList.add('freeze');
       document.querySelector('.menuOverlay').addEventListener('transitionend', () => document.body.classList.remove('freeze'));
@@ -47,8 +47,8 @@
     const components = [
       isLoading && <LoadingScreen key="LoadingScreen"/>,
       !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
-      isMobile && <HBGMenu overlay={showOverlay} key="HBGMenu"/>,
-      withSuspense(SlideIn, "SlideIn", {showOverlay}),
+      isMobile && <HBGMenu overlay={overlay} key="HBGMenu"/>,
+      withSuspense(SlideIn, "SlideIn", {overlay}),
       withSuspense(Portfolio, "Portfolio"),
       withSuspense(BackgroundImage, "Paris", { input: isDarkMode ? "hongkong-night" : "paris" }),
       withSuspense(About, "About"),

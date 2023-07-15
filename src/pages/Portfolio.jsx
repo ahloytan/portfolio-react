@@ -158,7 +158,7 @@ const Portfolio = () => {
   ));
 
   return (
-    <div id="scrollContainer" className={`portfolio ${font} ${bg}`}>
+    <div id="portfolio" className={`portfolio ${font} ${bg}`}>
       <span className="pageTitle">PORTFOLIO</span>
       <p>Click on the images to find out more!</p>
       <Slider ref={sliderRef} {...settings}>

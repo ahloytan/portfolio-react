@@ -48,7 +48,7 @@ const Home = ({ clickScroll }) => {
   };
 
   return (
-    <div className="home backgroundImage" style={homeBgStyle}>
+    <div id="home" className="home backgroundImage" style={homeBgStyle}>
       <Header clickScroll={clickScroll} />
       <div id="container"></div>
       <div className={`tagLine mt-16 font-m-light ${font}`}>
