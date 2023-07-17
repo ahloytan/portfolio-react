@@ -20,13 +20,13 @@ const Bio = () => {
   ];
 
   const doLoop = categories.map((d, i) => (
-    <div key={d} className="bioBox">
+    <div key={d} className="bioBox text-left md:text-center">
       <div className="catHolder style_prevu_kit">
         <a href={links[i]} rel="noreferrer" target="_blank">
           <img className={d} src={bioDir + d + ".svg"} title={d} alt={d} />
         </a>
       </div>
-      <div className="top2">
+      <div className="top2 text-center">
         {top2Cat.map((data, index) => (
           <li key={index}>{data[i]}</li>
         ))}
@@ -46,7 +46,7 @@ const Bio = () => {
           </a>
           !
         </div>
-        <div className="whatILove">{doLoop}</div>
+        <div className="whatILove text-center">{doLoop}</div>
       </div>
     </div>
   );

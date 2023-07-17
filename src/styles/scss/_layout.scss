@@ -291,13 +291,6 @@
     border-top-left-radius: 0.25rem;
   }
 
-  p {
-    font-size: 14px;
-    @include breakpoint($d_medium) {
-      font-size: 16px;
-    }
-  }
-
   .portfolioIcons {
     width: 30px;
     height: 30px;
@@ -326,7 +319,7 @@
     }
 
     p{
-      padding:15% 10px 0;
+      padding: 15% 10px 0;
     }
   }
 }
@@ -368,16 +361,13 @@
     }
 
     .whatILove {
-      text-align: center;
 
       .bioBox {
         width: 300px;
         padding: 10px 0;
-        text-align: left;
         display: inline-block;
         @include breakpoint($d_medium) {
           width: auto;
-          text-align: center;
         }
 
         .top2 {

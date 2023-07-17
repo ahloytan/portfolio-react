@@ -225,7 +225,7 @@ const Portfolio = () => {
   return (
     <div id="portfolio" className={`portfolio ${font} ${bg}`}>
       <span className="pageTitle">PORTFOLIO</span>
-      <p>Click on the images to find out more!</p>
+      <p className="text-sm md:text-base">Click on the images to find out more!</p>
       <div id="theColumn" className="columns-2 md:columns-3 xl:columns-4 mt-6">
         {doLoop}
       </div>
