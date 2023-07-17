@@ -49,7 +49,7 @@ const Header = ({ clickScroll }) => {
         <img className="headerLogo m-4" src="assets/logo/logo.jpg" onClick={activate} alt="headerLogo" />
       </div>
       <div className="text-sm hidden md:inline-flex items-center text-sm uppercase">
-        <a className={`mx-4 lg:mx-6 xl:mx-12 navLinks font-m-bold ${font}`} target="_blank" href="https://s3-ap-southeast-1.amazonaws.com/glints-dashboard/resume/907631bd73afd16ceaeb26476c9dd4e2.pdf" rel="noreferrer">
+        <a className={`mx-4 lg:mx-6 xl:mx-12 navLinks font-m-bold ${font}`} target="_blank" href={import.meta.env.VITE_RESUME} rel="noreferrer">
           <div>Résumé</div>
         </a>
         {doLoop}

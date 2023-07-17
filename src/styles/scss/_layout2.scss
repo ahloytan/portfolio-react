@@ -28,43 +28,8 @@ html {
   max-width: 550px;
   text-align: left;
 }
-/*Slick Styles*/
-.slick-next,
-.slick-prev {
-  top: 55%;
-  width: 26px;
-  height: 26px;
-  z-index: 5;
 
-  &:before {
-    content: "";
-  }
-}
-
-.slick-prev {
-  left: -10px;
-  background: url($images_dir + "back.svg") !important;
-}
-
-.slick-next {
-  right: -10px;
-  background: url($images_dir + "front.svg") !important;
-}
-
-.slick-slide {
-  img {
-    margin: 0 auto;
-    height: 225px;
-    width: 300px;
-    @include breakpoint($d_medium) {
-      width: 360px;
-    }
-  }
-}
-/*End of Slick Styles*/
 /*Arrow down styles*/
-//codepen.io/JakubHonisek/pen/qjpeeO?__cf_chl_jschl_tk__=1aa58b60509ea2bca72796278f0156aa8faa23ab-1591430360-0-ARb6DpzpaUZ4puHYkSjnRy4ucfltH30Abr4nYzW3sp03sn5-kDDk-8gwOhGmaMuNGA7qX--jLN1NgykbESur9jw_H6ZRgnNP7FUcAcuVopOH25TqoH--wddNsUtIjsTAaygRy3aA0cpa56B6l7tI2QKXnwno5NG3lyNw5MAHE3jxvqhlISeReHawQBzbpbHGq-3k2PeWzgdjUgfBU24AX4tQz541qOFST338p2r7MOptSpgrBXDZxp2vw329xu1tRy7Unio0hTjcOuogMV3ZL0zQropG-If4cm-_mam_dz3TXWRYZA06XISYsBLSSuH84c00R0wc3XmWhfMglND5T8m652miqE-Gf08PUwjUETku
-//stackoverflow.com/questions/32626135/chrome-error-when-embedding-video-url-with-iframe
 $base: 0.6rem;
 
 .scrollHolder {

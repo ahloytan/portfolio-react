@@ -25,7 +25,7 @@ const HBGMenuOverlay = ({ clickScroll, overlay }) => {
       <div className="overlayContent">
         <div className="divHold"></div>
         <div className="divHold">
-          <a className="resume" target="_blank" href="https://s3-ap-southeast-1.amazonaws.com/glints-dashboard/resume/907631bd73afd16ceaeb26476c9dd4e2.pdf" rel="noreferrer">
+          <a className="resume" target="_blank" href={import.meta.env.VITE_RESUME} rel="noreferrer">
             <div className="overlayPages">Résumé</div>
             <div className="liner"></div>
           </a>

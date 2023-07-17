@@ -39,7 +39,7 @@ const Bio = () => {
       <div className="descBox descBioBox" ref={descBoxRef}>
         <span className="pageTitle">MY BIO</span>
         <div className="description">
-          Currently a Year 3 SMU Information Systems undergraduate. 25 years old. These background images were
+          Final year SMU Information Systems undergraduate. 25 years old. These background images were
           photographed by me! Love me some sports, piano & games. Grateful to be featured on{' '}
           <a href={vidLink} rel="noreferrer" target="_blank">
             MINDEF

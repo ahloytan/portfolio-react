@@ -52,11 +52,15 @@ const About = () => {
             ))}
           </div>
           <div>
-            I'm an aspiring full-stack software engineer that enjoys coding! Currently interning at{' '}
+            Here's my {' '}
+            <a href={import.meta.env.VITE_RESUME} target="_blank" rel="noreferrer">
+              Résumé!
+            </a>{' '}
+            I'm an aspiring full-stack software engineer that enjoys coding! Interned at{' '}
             <a href="https://www.aimazing.co/#gref" target="_blank" rel="noreferrer">
               AImazing
             </a>{' '}
-            as a Fullstack Developer. Interned at{' '}
+            as a Fullstack Developer, at {' '}
             <a href="https://surer.sg/" target="_blank" rel="noreferrer">
               Surer
             </a>{' '}
