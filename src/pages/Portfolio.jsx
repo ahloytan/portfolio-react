@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { isMobile } from '../mixins/helper.jsx';
 
 const Portfolio = () => {
+
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
   const font = isDarkMode ? 'text-white' : 'text-black';
   const bg = isDarkMode ? 'bg-dark' : 'bg-light';
-
   const pfDir = 'assets/carousel/';
   const linkDir = 'https://';
   const straitsTimes = 'graphics.straitstimes.com/STI/STIMEDIA/Interactives/';
@@ -25,7 +26,7 @@ const Portfolio = () => {
     {
       title: 'Taskucci',
       link: `github.com/karissekjw/wad2-G8T1-frontend`,
-      desc: 'A web application project and spin-off based on 2 popular project management tool, Jira & Trello. Integrated with slack!',
+      desc: 'A web application project and spin-off based on 2 popular project management tool, Jira & Trello. Integrated with Slack!',
       img: 'taskucci',
       icons: [
         { icon: 'vue', link: `github.com/karissekjw/wad2-G8T1-frontend` },
@@ -192,11 +193,20 @@ const Portfolio = () => {
     }
   ];
   
+  useEffect(() => {
+    const portfolioDiv = document.getElementById('portfolio');
+
+    if (isMobile) portfolioDiv.style.overflowY = 'scroll';
+    isDarkMode ? portfolioDiv.classList.add('dark-shadow') : portfolioDiv.classList.remove('dark-shadow');
+  }, [isMobile, isDarkMode])
+  
+
   const [expanded, setExpanded] = useState(false);
   const expandPortfolio = () => {
     setExpanded(true);
     const portfolioDiv = document.getElementById('portfolio');
-    portfolioDiv.style.height = '2350px';
+    portfolioDiv.style.height = window.innerWidth <= 1000 ? '4400px' : window.innerWidth <= 1280 ? '3250px': '2350px';
+    portfolioDiv.classList.add('expanded');
   };
 
   const doLoop = projects.map((project, index) => (
@@ -226,10 +236,10 @@ const Portfolio = () => {
     <div id="portfolio" className={`portfolio ${font} ${bg}`}>
       <span className="pageTitle">PORTFOLIO</span>
       <p className="text-sm md:text-base">Click on the images to find out more!</p>
-      <div id="theColumn" className="columns-2 md:columns-3 xl:columns-4 mt-6">
+      <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">
         {doLoop}
       </div>
-      {!expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
+      {!isMobile && !expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
     </div>
   );
 };

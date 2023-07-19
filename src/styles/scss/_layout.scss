@@ -275,6 +275,14 @@
     transition: all ease-in .5s;
   }
 
+  &.dark-shadow:before {
+    box-shadow: inset 0px -4rem 12px -1rem rgba(43, 43, 43, 0.9);
+  }
+
+  &.expanded:before {
+    height: 0; 
+  }
+
   #viewMore {
     position: absolute;
     bottom: 0;
