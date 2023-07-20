@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { isMobile } from '../mixins/helper.jsx';
 import RightNavBar from '../components/RightNavBar.jsx';

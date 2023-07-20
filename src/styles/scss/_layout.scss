@@ -256,12 +256,12 @@
 }
 
 .portfolio {
-  height: 1000px; //2350
+  max-height: 1000px;
   text-align: center;
   padding: 10px 20px 0;
   overflow-y: hidden;
   position: relative;
-  transition: all ease-in .5s;
+  transition: all ease-in .75s;
 
   &:before {
     content: "";
@@ -330,6 +330,10 @@
       padding: 15% 10px 0;
     }
   }
+}
+
+.portfolio.expanded {
+  max-height: 10000px;
 }
 
 .about,

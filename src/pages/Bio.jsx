@@ -40,11 +40,11 @@ const Bio = () => {
         <span className="pageTitle">MY BIO</span>
         <div className="description">
           Yo! I'm a 25-year-old final year student at SMU, majoring in Information Systems. Btw, those cool background images you see were actually taken by me! I'm really into sports, piano, and games –
-          they're my passions! Oh, and I'm super grateful to be featured on{' '}           
+          they're my passions! I'm also super grateful to be featured on{' '}           
           <a href={vidLink} rel="noreferrer" target="_blank">
             MINDEF
           </a>
-          ! How awesome is that?
+          !
         </div>
         <div className="whatILove text-center">{doLoop}</div>
       </div>

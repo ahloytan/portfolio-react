@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { isMobile } from '../mixins/helper.jsx';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleExpanded } from '../store/index';
 
 const Portfolio = () => {
-
+  const expanded = useSelector((state) => state.app.expanded);
+  const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
   const font = isDarkMode ? 'text-white' : 'text-black';
   const bg = isDarkMode ? 'bg-dark' : 'bg-light';
   const pfDir = 'assets/carousel/';
   const linkDir = 'https://';
   const straitsTimes = 'graphics.straitstimes.com/STI/STIMEDIA/Interactives/';
+
   const projects = [
     {
       title: 'Twitter Retweet Bot',
@@ -133,7 +135,7 @@ const Portfolio = () => {
     },
     {
       title: 'Sun Hung Kai Properties',
-      link: `ahloytan.netlify.app`,
+      link: `www.shkp.com/en-US/about-us`,
       desc: 'Developed transaction query page for a prominent property developer in Hong Kong within 2 weeks. Closely involved with the development and deployment of the UAT.',
       img: 'shkp',
       icons: [
@@ -149,7 +151,7 @@ const Portfolio = () => {
       desc: '3rd iteration of my personal portfolio website. Building and upgrading my portfolio website using React JS, Redux, Vite, and Netlify!',
       img: 'portfolio',
       icons: [
-        { icon: 'github', link: 'ahloytan.netlify.app' },
+        { icon: 'github', link: 'github.com/ahloytan/portfolio-react' },
         { icon: 'react' },
         { icon: 'tailwind' },
         { icon: 'netlify' }
@@ -192,22 +194,18 @@ const Portfolio = () => {
       ]
     }
   ];
-  
-  useEffect(() => {
-    const portfolioDiv = document.getElementById('portfolio');
 
-    if (isMobile) portfolioDiv.style.overflowY = 'scroll';
-    isDarkMode ? portfolioDiv.classList.add('dark-shadow') : portfolioDiv.classList.remove('dark-shadow');
-  })
-  
-
-  const [expanded, setExpanded] = useState(false);
   const expandPortfolio = () => {
-    setExpanded(true);
+    dispatch(toggleExpanded());
     const portfolioDiv = document.getElementById('portfolio');
-    portfolioDiv.style.height = window.innerWidth <= 1000 ? '4400px' : window.innerWidth <= 1280 ? '3000px': '2350px';
     portfolioDiv.classList.add('expanded');
   };
+
+  useEffect(() => {
+    const portfolioDiv = document.getElementById('portfolio');
+    portfolioDiv.classList.toggle('expanded', expanded);
+    portfolioDiv.classList.toggle('dark-shadow', isDarkMode);
+  }, [expanded, isDarkMode]);
 
   const doLoop = projects.map((project, index) => (
     <div className="pb-8 rounded" key={index}>
@@ -239,7 +237,7 @@ const Portfolio = () => {
       <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">
         {doLoop}
       </div>
-      {!isMobile && !expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
+      {!expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
     </div>
   );
 };
