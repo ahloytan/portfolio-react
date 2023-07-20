@@ -13,7 +13,7 @@ const Portfolio = () => {
   const projects = [
     {
       title: 'Twitter Retweet Bot',
-      link: 'github.com/ahloytan/twitter-retweet-bot',
+      link: 'https://github.com/ahloytan/twitter-retweet-bot#demonstration',
       desc: 'A simple bot (automation) used to retweet/unretweet NFT giveaway tweets from Twitter. No more manual clicking!',
       img: 'twitter-giveaway',
       icons: [
@@ -74,7 +74,7 @@ const Portfolio = () => {
     {
       title: 'Budget Breakdown 2018',
       link: `${straitsTimes}2018/02/singapore-budget-revenue-and-spending-breakdown-2018/index.html`,
-      desc: 'Tried my best to understand the orginal code because it was reused for 2016 & 2017 but it was very complicated. I learned a lot thou, it helped when I was doing other data visualisation interactives',
+      desc: 'Visualised the 2018 Singapore revenue & spending with D3.js. Filters include year comparison and sector breakdown by spending',
       img: 'budget',
       icons: [
         { icon: 'the-straits-times', link: `${straitsTimes}2018/02/singapore-budget-revenue-and-spending-breakdown-2018/index.html` },
@@ -170,7 +170,7 @@ const Portfolio = () => {
     {
       title: 'SG Public Holidays 2018',
       link: `${straitsTimes}2018/04/data-story-public-holidays/index.html`,
-      desc: 'Utilised D3.Js with jquery & css effects to visualise the various holidays in Singapore back in 2018',
+      desc: 'Utilised D3.Js with JQuery & css effects to visualise the various holidays in Singapore back in 2018',
       img: 'holidays',
       icons: [
         { icon: 'the-straits-times', link: `${straitsTimes}2018/04/data-story-public-holidays/index.html` },
@@ -198,14 +198,14 @@ const Portfolio = () => {
 
     if (isMobile) portfolioDiv.style.overflowY = 'scroll';
     isDarkMode ? portfolioDiv.classList.add('dark-shadow') : portfolioDiv.classList.remove('dark-shadow');
-  }, [isMobile, isDarkMode])
+  })
   
 
   const [expanded, setExpanded] = useState(false);
   const expandPortfolio = () => {
     setExpanded(true);
     const portfolioDiv = document.getElementById('portfolio');
-    portfolioDiv.style.height = window.innerWidth <= 1000 ? '4400px' : window.innerWidth <= 1280 ? '3250px': '2350px';
+    portfolioDiv.style.height = window.innerWidth <= 1000 ? '4400px' : window.innerWidth <= 1280 ? '3000px': '2350px';
     portfolioDiv.classList.add('expanded');
   };
 
