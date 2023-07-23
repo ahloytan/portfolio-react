@@ -1,24 +1,24 @@
 import React from 'react';
-
+//https://codepen.io/StephenScaff/pen/Jjdveyw
 function useEventListener(eventName, handler, element = document) {
-  const savedHandler = React.useRef();
+  const savedHandler = React.useRef()
 
   React.useEffect(() => {
-    savedHandler.current = handler;
-  }, [handler]);
+    savedHandler.current = handler
+  }, [handler])
 
   React.useEffect(() => {
-    const isSupported = element && element.addEventListener;
-    if (!isSupported) return;
+    const isSupported = element && element.addEventListener
+    if (!isSupported) return
 
-    const eventListener = (event) => savedHandler.current(event);
+    const eventListener = (event) => savedHandler.current(event)
 
-    element.addEventListener(eventName, eventListener);
+    element.addEventListener(eventName, eventListener)
 
     return () => {
-      element.removeEventListener(eventName, eventListener);
-    };
-  }, [eventName, element]);
+      element.removeEventListener(eventName, eventListener)
+    }
+  }, [eventName, element])
 }
 
 function AnimatedCursor({
@@ -66,93 +66,95 @@ function AnimatedCursor({
     requestRef.current = requestAnimationFrame(animateOuterCursor);
     return () => cancelAnimationFrame(requestRef.current);
   }, [animateOuterCursor]);
+  
+  const onMouseDown  = React.useCallback(() => setIsActive(true), [])
+  const onMouseUp    = React.useCallback(() => setIsActive(false), [])
+  const onMouseEnter = React.useCallback(() => setIsVisible(true), [])
+  const onMouseLeave = React.useCallback(() => setIsVisible(false), [])
 
-  const onMouseDown = React.useCallback(() => setIsActive(true), []);
-  const onMouseUp = React.useCallback(() => setIsActive(false), []);
-  const onMouseEnter = React.useCallback(() => setIsVisible(true), []);
-  const onMouseLeave = React.useCallback(() => setIsVisible(false), []);
+  useEventListener('mousemove', onMouseMove, document)
+  useEventListener('mousedown', onMouseDown, document)
+  useEventListener('mouseup', onMouseUp, document)
+  useEventListener('mouseenter', onMouseEnter, document)
+  useEventListener('mouseleave', onMouseLeave, document)
 
-  useEventListener('mousemove', onMouseMove, document);
-  useEventListener('mousedown', onMouseDown, document);
-  useEventListener('mouseup', onMouseUp, document);
-  useEventListener('mouseenter', onMouseEnter, document);
-  useEventListener('mouseleave', onMouseLeave, document);
 
   React.useEffect(() => {
     if (isActive) {
-      cursorInnerRef.current.style.transform = `scale(${innerScale})`;
-      cursorOuterRef.current.style.transform = `scale(${outerScale})`;
+      cursorInnerRef.current.style.transform = `scale(${innerScale})`
+      cursorOuterRef.current.style.transform = `scale(${outerScale})`
     } else {
-      cursorInnerRef.current.style.transform = 'scale(1)';
-      cursorOuterRef.current.style.transform = 'scale(1)';
+      cursorInnerRef.current.style.transform = 'scale(1)'
+      cursorOuterRef.current.style.transform = 'scale(1)'
     }
-  }, [innerScale, outerScale, isActive]);
+  }, [innerScale, outerScale, isActive])
 
   React.useEffect(() => {
     if (isActiveClickable) {
-      cursorInnerRef.current.style.transform = `scale(${innerScale * 1.3})`;
-      cursorOuterRef.current.style.transform = `scale(${outerScale * 1.4})`;
+      cursorInnerRef.current.style.transform = `scale(${innerScale * 1.3})`
+      cursorOuterRef.current.style.transform = `scale(${outerScale * 1.4})`
     }
-  }, [innerScale, outerScale, isActiveClickable]);
+  }, [innerScale, outerScale, isActiveClickable])
 
   React.useEffect(() => {
     if (isVisible) {
-      cursorInnerRef.current.style.opacity = 1;
-      cursorOuterRef.current.style.opacity = 1;
+      cursorInnerRef.current.style.opacity = 1
+      cursorOuterRef.current.style.opacity = 1
     } else {
-      cursorInnerRef.current.style.opacity = 0;
-      cursorOuterRef.current.style.opacity = 0;
+      cursorInnerRef.current.style.opacity = 0
+      cursorOuterRef.current.style.opacity = 0
     }
-  }, [isVisible]);
+  }, [isVisible])
 
   React.useEffect(() => {
     const clickables = document.querySelectorAll(
-      'a, input[type="submit"], input[type="image"], label[for], select, button, .link'
-    );
+      'a, input[type="submit"], input[type="image"], label[for], select, button, .link, .navLinks, #toggle, #viewMore, .headerLogo'
+    )
     clickables.forEach((el) => {
-      el.style.cursor = 'none';
+      el.style.cursor = 'none'
 
       el.addEventListener('mouseover', () => {
-        setIsActive(true);
-      });
+        setIsActive(true)
+      })
       el.addEventListener('click', () => {
-        setIsActive(true);
-        setIsActiveClickable(false);
-      });
+        setIsActive(true)
+        setIsActiveClickable(false)
+      })
       el.addEventListener('mousedown', () => {
-        setIsActiveClickable(true);
-      });
+        setIsActiveClickable(true)
+      })
       el.addEventListener('mouseup', () => {
-        setIsActive(true);
-      });
+        setIsActive(true)
+      })
       el.addEventListener('mouseout', () => {
-        setIsActive(false);
-        setIsActiveClickable(false);
-      });
-    });
+        setIsActive(false)
+        setIsActiveClickable(false)
+      })
+    })
 
     return () => {
       clickables.forEach((el) => {
         el.removeEventListener('mouseover', () => {
-          setIsActive(true);
-        });
+          setIsActive(true)
+        })
         el.removeEventListener('click', () => {
-          setIsActive(true);
-          setIsActiveClickable(false);
-        });
+          setIsActive(true)
+          setIsActiveClickable(false)
+        })
         el.removeEventListener('mousedown', () => {
-          setIsActiveClickable(true);
-        });
+          setIsActiveClickable(true)
+        })
         el.removeEventListener('mouseup', () => {
-          setIsActive(true);
-        });
+          setIsActive(true)
+        })
         el.removeEventListener('mouseout', () => {
-          setIsActive(false);
-          setIsActiveClickable(false);
-        });
-      });
-    };
-  }, [isActive]);
+          setIsActive(false)
+          setIsActiveClickable(false)
+        })
+      })
+    }
+  }, [isActive])
+
 
   const styles = {
     cursor: {
@@ -182,7 +184,7 @@ function AnimatedCursor({
       backgroundColor: `rgba(${color}, ${outerAlpha})`,
       transition: 'opacity 0.15s ease-in-out, transform 0.15s ease-in-out'
     }
-  };
+  }
 
   return (
     <>

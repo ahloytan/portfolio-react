@@ -47,7 +47,7 @@
 
     const components = [
       isLoading && <LoadingScreen key="LoadingScreen"/>,
-      !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
+      !isLoading && !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
       isMobile && <HBGMenu overlay={overlay} key="HBGMenu"/>,
       withSuspense(SlideIn, "SlideIn", {overlay}),
       withSuspense(Portfolio, "Portfolio"),
@@ -60,7 +60,7 @@
       !isLoading && !isMobile && <RightNavBar key="RightNavBar"/> 
     ];
 
-    return <main className="relative font-m-reg">{components}</main>;
+    return <main id="main" className="relative font-m-reg">{components}</main>;
   };
 
   export default App;

@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html *,
+body * {
+  cursor: none;
+}
+
 .freeze {
   pointer-events: none;
 }
