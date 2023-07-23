@@ -26,10 +26,8 @@ const Bio = () => {
           <img className={d} src={bioDir + d + ".svg"} title={d} alt={d} />
         </a>
       </div>
-      <div className="top2 text-center">
-        {top2Cat.map((data, index) => (
-          <li key={index}>{data[i]}</li>
-        ))}
+      <div className="top2">
+        {top2Cat.map((data, index) => <li key={index}>{data[i]}</li>)}
       </div>
     </div>
   ));

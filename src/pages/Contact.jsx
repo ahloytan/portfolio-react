@@ -1,12 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { isMobile } from '../mixins/helper.jsx';
-import RightNavBar from '../components/RightNavBar.jsx';
-
 
 const Contact = () => {
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
-  const isLoading = useSelector((state) => state.app.loading);
   const font = isDarkMode ? 'text-white' : 'text-black';
   const bg = isDarkMode ? 'bg-dark' : 'bg-light';
 
@@ -32,7 +28,6 @@ const Contact = () => {
       <span className="pageTitle">CONTACT ME</span>
       <div className="socialMediaHolder">{doLoop}</div>
       <div className={`copyRight ${font}`}>Coded in Singapore | &copy;2023 Aloysius Tan | All Rights Reserved</div>
-      { !isLoading && !isMobile && <RightNavBar key="RightNavBar"/> }
     </div>
   );
 };

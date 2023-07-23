@@ -9,6 +9,7 @@
   const About = lazy(() => import('./pages/About.jsx'));
   const Contact = lazy(() => import('./pages/Contact.jsx'));
   const BackgroundImage = lazy(() => import('./components/BackgroundImage.jsx'));
+  import RightNavBar from './components/RightNavBar.jsx';
 
   import LoadingScreen from './components/LoadingScreen.jsx'
   import AnimatedCursor from './components/cursor.jsx';
@@ -56,6 +57,7 @@
       withSuspense(Bio, "Bio"),
       withSuspense(BackgroundImage, "HongKong", { input: isDarkMode ? "wheelers" : "hongkong" }),
       withSuspense(Contact, "Contact"),
+      !isLoading && !isMobile && <RightNavBar key="RightNavBar"/> 
     ];
 
     return <main className="relative font-m-reg">{components}</main>;
