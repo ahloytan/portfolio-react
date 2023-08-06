@@ -70,7 +70,7 @@ const Home = ({ clickScroll }) => {
           />
         </div>
       </div>
-      <div className="nameJob mt-32 md:mt-48 w-auto md:w-100">
+      <div className="nameJob mt-20 md:mt-48 w-auto md:w-100">
         <div className={`text-3xl md:text-5xl py-2.5 ${font}`}>ALOYSIUS TAN</div>
         <div className={`text-base md:text-2xl pb-2.5 font-m-light ${font}`}>WEB DEVELOPER</div>
       </div>

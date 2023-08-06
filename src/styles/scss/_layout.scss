@@ -335,6 +335,7 @@
 .bio {
   height: auto;
   text-align: center;
+  padding-top: 10px;
 
   .descBox {
     padding: 10px 15px;
@@ -342,7 +343,6 @@
     .description {
       margin: 0 auto;
       padding-top: 15px;
-      font-size: 16px;
       max-width: 550px;
       text-align: justify;
       line-height: 140%;

@@ -33,7 +33,7 @@ const Bio = () => {
   ));
 
   return (
-    <div id="bio" className={`bio ${bg} ${font}`} ref={bioRef}>
+    <div id="bio" className={`bio text-sm md:text-base ${bg} ${font}`} ref={bioRef}>
       <div className="descBox descBioBox" ref={descBoxRef}>
         <span className="pageTitle">MY BIO</span>
         <div className="description">

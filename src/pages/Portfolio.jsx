@@ -15,7 +15,7 @@ const Portfolio = () => {
   const projects = [
     {
       title: 'Twitter Retweet Bot',
-      link: 'https://github.com/ahloytan/twitter-retweet-bot#demonstration',
+      link: 'github.com/ahloytan/twitter-retweet-bot#demonstration',
       desc: 'A simple bot (automation) used to retweet/unretweet NFT giveaway tweets from Twitter. No more manual clicking!',
       img: 'twitter-giveaway',
       icons: [
@@ -59,6 +59,18 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'google-maps' },
         { icon: 'javascript' }
+      ]
+    },
+    {
+      title: 'CakeDeFi Masternode',
+      link: `themasternode.vercel.app`,
+      desc: 'Simple web application to track the masternodes (DefiChain) on CakeDefi and to convert the total sums into various currencies. Deployed on Vercel!',
+      img: 'cakedefi-masternode',
+      icons: [
+        { icon: 'github', link: `github.com/ahloytan/cakedefi-masternode` },
+        { icon: 'react' },
+        { icon: 'axios' },
+        { icon: 'vercel' }
       ]
     },
     {
@@ -179,6 +191,18 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'd3' },
         { icon: 'jquery' }
+      ]
+    },
+    {
+      title: 'Orange Dolphin',
+      link: 'https://orangedolphin.web.app/',
+      desc: 'Revamped Orange Dolphin\'s website from their wordpress blog using Vue + Bootstrap. Hosted on Firebase ',
+      img: 'od',
+      icons: [
+        { icon: 'github', link: 'https://github.com/ahloytan/od-revamp' },
+        { icon: 'vue' },
+        { icon: 'bootstrap' },
+        { icon: 'firebase' }
       ]
     },
     {

@@ -31,15 +31,15 @@ const About = () => {
       readMoreElement.remove();
       aboutDescElement.insertAdjacentHTML(
         'beforeend',
-        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.Js, React.Js, D3.Js, Gulp.Js, Bootstrap, Tailwind, and Vuetify. For backend, I'm still learning the ropes on Node.js, Express.js, C#, ASP.NET Core, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I hope to showcase more learnings in future projects!"
+        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.Js, React.Js, D3.Js, Gulp.Js, Bootstrap, Tailwind, and Vuetify. For backend, I'm still learning the ropes on Node.js, Express.js, C#, ASP.NET Core, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I will showcase more learnings in future projects!"
       );
     }
   };
 
   return (
-    <div id="about" className={`about ${font} ${bg}`}>
+    <div id="about" className={`about text-sm md:text-base ${font} ${bg}`}>
       <div className="descBox">
-        <span className="pageTitle">EXPERIENCE</span>
+        <div className="pageTitle">EXPERIENCE</div>
         <div className="aboutDesc description">
           <div className="experienceBox flex justify-between mb-8">
             {data.map((d, index) => (
@@ -68,9 +68,8 @@ const About = () => {
             <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank" rel="noreferrer">
               The Straits Times
             </a>{' '}
-            as a Frontend Developer back in 2018.
+            as a Frontend Developer back in 2018.{' '}
             <a id="readMore" onClick={readMore} href="#/">
-              {' '}
               Read More
             </a>
           </div>

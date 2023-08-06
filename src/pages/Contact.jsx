@@ -7,19 +7,29 @@ const Contact = () => {
   const bg = isDarkMode ? 'bg-dark' : 'bg-light';
 
   const contactDir = 'assets/social_media/';
-  const links = [
-    'https://www.instagram.com/ahloytan/',
-    'https://www.linkedin.com/in/aloytan/',
-    'mailto:chewinggum222@hotmail.com',
-    'https://www.youtube.com/channel/UCcl5vpu_9N6vspUF_AtMRuQ',
-    'https://www.facebook.com/ATJH4',
-    'https://github.com/ahloytan?tab=repositories',
-  ];
-  const socialMedia = ['instagram', 'linkedin', 'gmail', 'youtube', 'facebook', 'github'];
 
-  const doLoop = links.map((d, i) => (
-    <a className="socialMediaIcons" key={i} href={d} rel="noreferrer" target="_blank">
-      <img className="style_prevu_kit" src={contactDir + socialMedia[i] + '.svg'} alt={socialMedia[i]} title={d} />
+  const data = [
+    {
+      link: 'https://www.instagram.com/ahloytan/',
+      icon: 'instagram',
+    },
+    {
+      link: 'https://www.linkedin.com/in/aloytan/',
+      icon: 'linkedin', 
+    },
+    {
+      link: 'mailto:chewinggum222@hotmail.com',
+      icon: 'gmail', 
+    },
+    {
+      link: 'https://github.com/ahloytan?tab=repositories',
+      icon: 'github'
+    }
+  ];
+
+  const doLoop = data.map((d, i) => (
+    <a className="socialMediaIcons" key={i} href={d.link} rel="noreferrer" target="_blank">
+      <img className="style_prevu_kit" src={contactDir + d.icon + '.svg'} alt={d.icon} title={d.icon} />
     </a>
   ));
 
