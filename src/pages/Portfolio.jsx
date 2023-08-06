@@ -110,15 +110,15 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Trump vs Kim: Who Said What',
-      link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html`,
-      desc: 'A short quiz about identifying a phrase and guessing which leader said it. Users get to view their results against other players\' guesses',
-      img: 'whosaywhat',
+      title: 'Corporate Pass Application',
+      link: `github.com/chewyixin99/is442-oop-22`,
+      desc: 'An automated system for Singapore Sports School to manage their corporate pass bookings, replacing the manual and labor-intensive process currently used by the staff. The system aims to streamline operations, reduce workload, and minimize the potential for human errors in the booking process.',
+      img: 'oop',
       icons: [
-        { icon: 'the-straits-times', link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html` },
-        { icon: 'vue' },
-        { icon: 'firebase' },
-        { icon: 'axios' }
+        { icon: 'vue', link: `github.com/chewyixin99/is442-oop-22` },
+        { icon: 'springboot' },
+        { icon: 'mysql' },
+        { icon: 'bootstrap' }
       ]
     },
     {
@@ -158,6 +158,18 @@ const Portfolio = () => {
       ]
     },
     {
+      title: 'Trump vs Kim: Who Said What',
+      link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html`,
+      desc: 'A short quiz about identifying a phrase and guessing which leader said it. Users get to view their results against other players\' guesses',
+      img: 'whosaywhat',
+      icons: [
+        { icon: 'the-straits-times', link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html` },
+        { icon: 'vue' },
+        { icon: 'firebase' },
+        { icon: 'axios' }
+      ]
+    },
+    {
       title: 'Portfolio',
       link: 'ahloytan.netlify.app',
       desc: '3rd iteration of my personal portfolio website. Building and upgrading my portfolio website using React JS, Redux, Vite, and Netlify!',
@@ -167,18 +179,6 @@ const Portfolio = () => {
         { icon: 'react' },
         { icon: 'tailwind' },
         { icon: 'netlify' }
-      ]
-    },
-    {
-      title: 'Corporate Pass Application',
-      link: `github.com/chewyixin99/is442-oop-22`,
-      desc: 'An automated system for Singapore Sports School to manage their corporate pass bookings, replacing the manual and labor-intensive process currently used by the staff. The system aims to streamline operations, reduce workload, and minimize the potential for human errors in the booking process.',
-      img: 'oop',
-      icons: [
-        { icon: 'vue', link: `github.com/chewyixin99/is442-oop-22` },
-        { icon: 'springboot' },
-        { icon: 'mysql' },
-        { icon: 'bootstrap' }
       ]
     },
     {
