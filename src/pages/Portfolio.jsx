@@ -26,15 +26,15 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Taskucci',
-      link: `github.com/karissekjw/wad2-G8T1-frontend`,
-      desc: 'A web application project and spin-off based on 2 popular project management tool, Jira & Trello. Integrated with Slack!',
-      img: 'taskucci',
+      title: 'Portfolio',
+      link: 'ahloytan.netlify.app',
+      desc: '3rd iteration of my personal portfolio website. Building and upgrading my portfolio website using React JS, Redux, Vite, and Netlify!',
+      img: 'portfolio',
       icons: [
-        { icon: 'vue', link: `github.com/karissekjw/wad2-G8T1-frontend` },
-        { icon: 'buefy' },
-        { icon: 'flask' },
-        { icon: 'mysql' }
+        { icon: 'github', link: 'github.com/ahloytan/portfolio-react' },
+        { icon: 'react' },
+        { icon: 'tailwind' },
+        { icon: 'netlify' }
       ]
     },
     {
@@ -170,15 +170,27 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Portfolio',
-      link: 'ahloytan.netlify.app',
-      desc: '3rd iteration of my personal portfolio website. Building and upgrading my portfolio website using React JS, Redux, Vite, and Netlify!',
-      img: 'portfolio',
+      title: 'Mini Yahoo Finance',
+      link: 'mini-yfinance.vercel.app',
+      desc: 'Built a minified version of yFinance to serve my brother\'s needs for specific & centralised financial data for his investment planning',
+      img: 'mini-yfinance',
       icons: [
-        { icon: 'github', link: 'github.com/ahloytan/portfolio-react' },
-        { icon: 'react' },
-        { icon: 'tailwind' },
-        { icon: 'netlify' }
+        { icon: 'github', link: 'github.com/ahloytan/mini-yfinance' },
+        { icon: 'vue' },
+        { icon: 'flask' },
+        { icon: 'vercel' }
+      ]
+    },
+    {
+      title: 'Taskucci',
+      link: `github.com/karissekjw/wad2-G8T1-frontend`,
+      desc: 'A web application project and spin-off based on 2 popular project management tool, Jira & Trello. Integrated with Slack!',
+      img: 'taskucci',
+      icons: [
+        { icon: 'vue', link: `github.com/karissekjw/wad2-G8T1-frontend` },
+        { icon: 'buefy' },
+        { icon: 'flask' },
+        { icon: 'mysql' }
       ]
     },
     {
