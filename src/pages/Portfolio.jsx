@@ -122,12 +122,24 @@ const Portfolio = () => {
       ]
     },
     {
+      title: 'Trump vs Kim: Who Said What',
+      link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html`,
+      desc: 'A short quiz about identifying a phrase and guessing which leader said it. Users get to view their results against other players\' guesses',
+      img: 'whosaywhat',
+      icons: [
+        { icon: 'the-straits-times', link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html` },
+        { icon: 'vue' },
+        { icon: 'firebase' },
+        { icon: 'axios' }
+      ]
+    },
+    {
       title: 'Corny Cohbs',
-      link: `www.youtube.com/watch?v=fcZXfoB2f70`,
+      link: `cornycohbs.com`,
       desc: 'Corny Cohbs Web3 NFT project. Web3 Hedera Hashgraph NFT customer front facing website built using Vue 3 + Tailwind CSS in 1.5days',
       img: 'corny-cobhs',
       icons: [
-        { icon: 'github', link: `www.youtube.com/watch?v=fcZXfoB2f70` },
+        { icon: 'github', link: `github.com/ahloytan/Corny-Cohbs` },
         { icon: 'vue' },
         { icon: 'tailwind' },
         { icon: 'firebase' }
@@ -158,15 +170,15 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Trump vs Kim: Who Said What',
-      link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html`,
-      desc: 'A short quiz about identifying a phrase and guessing which leader said it. Users get to view their results against other players\' guesses',
-      img: 'whosaywhat',
+      title: 'SRC x Locomole',
+      link: 'youtu.be/KBd7YxGKDiA',
+      desc: 'A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!',
+      img: 'src',
       icons: [
-        { icon: 'the-straits-times', link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html` },
-        { icon: 'vue' },
-        { icon: 'firebase' },
-        { icon: 'axios' }
+        { icon: 'youtube', link: 'youtu.be/KBd7YxGKDiA' },
+        { icon: 'premiere-pro' },
+        { icon: 'locomole' },
+        { icon: 'canva' }
       ]
     },
     {
@@ -217,18 +229,6 @@ const Portfolio = () => {
         { icon: 'firebase' }
       ]
     },
-    {
-      title: 'SRC x Locomole',
-      link: 'youtu.be/KBd7YxGKDiA',
-      desc: 'A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!',
-      img: 'src',
-      icons: [
-        { icon: 'youtube', link: 'youtu.be/KBd7YxGKDiA' },
-        { icon: 'premiere-pro' },
-        { icon: 'locomole' },
-        { icon: 'canva' }
-      ]
-    }
   ];
 
   const expandPortfolio = () => {
