@@ -403,8 +403,8 @@
         height: 60px;
         display: block;
         @include breakpoint($d_medium) {
-          width: 100px;
-          height: 100px;
+          width: 90px;
+          height: 90px;
         }
       }
     }
@@ -467,14 +467,14 @@
   }
 
   .active {
-    background: rgba(16, 223, 178, 0.7) !important;
+    background: rgba(255, 191, 0, 0.7) !important;
   }
 
   .dot-label {
     position: relative;
     top: 3px;
     padding: 0.4em 0.5em;
-    color: rgba(16, 223, 178, 0.7);
+    color: rgba(255, 191, 0, 0.7);
     text-transform: uppercase;
     opacity: 0;
     transition: transform .2s,opacity .2s;

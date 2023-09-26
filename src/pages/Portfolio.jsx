@@ -12,6 +12,29 @@ const Portfolio = () => {
   const linkDir = 'https://';
   const straitsTimes = 'graphics.straitstimes.com/STI/STIMEDIA/Interactives/';
 
+  const hof = [
+    {
+      img: 'vue',
+      text: 'Vue'
+    },
+    {
+      img: 'nodejs',
+      text: 'NodeJs'
+    },
+    {
+      img: 'mysql',
+      text: 'MySQL'
+    },
+    {
+      img: 'python',
+      text: 'Python'
+    },
+    {
+      img: 'tailwind',
+      text: 'Tailwind'
+    },
+  ]
+
   const projects = [
     {
       title: 'Twitter Retweet Bot',
@@ -242,6 +265,13 @@ const Portfolio = () => {
     portfolioDiv.classList.toggle('dark-shadow', isDarkMode);
   }, [expanded, isDarkMode]);
 
+  const hallOfFame = hof.map((lang, index) => (
+    <div className="portfolioIcons" key={index}>
+      <img src={`assets/icons/${lang.img}.svg`} alt="" />
+      <span className="text-xs">{lang.text}</span>
+    </div>
+  ))
+
   const doLoop = projects.map((project, index) => (
     <div className="pb-8 rounded" key={index}>
       <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
@@ -268,6 +298,10 @@ const Portfolio = () => {
   return (
     <div id="portfolio" className={`portfolio ${font} ${bg}`}>
       <span className="pageTitle">PORTFOLIO</span>
+      <div>
+        {/* <p className="text-sm md:text-base">Here are my best 5!</p>
+        {hallOfFame}     */}
+      </div>
       <p className="text-sm md:text-base">Click on the images to find out more!</p>
       <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">
         {doLoop}
