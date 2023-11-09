@@ -33,7 +33,8 @@ const RightNavBar = () => {
 
     navItems.forEach((item) => {
       const target = document.getElementById(item.sectionId);
-      observerRef.current.observe(target);
+  
+      if (target) observerRef.current.observe(target);
     });
 
     return () => observerRef.current.disconnect();

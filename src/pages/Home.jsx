@@ -51,7 +51,7 @@ const Home = ({ clickScroll }) => {
     <div id="home" className="home backgroundImage" style={homeBgStyle}>
       <Header clickScroll={clickScroll} />
       <div id="container"></div>
-      <div className={`tagLine mt-16 font-m-light ${font}`}>
+      <div className={`tagLine font-m-light ${font}`}>
         <div>
           <Typewriter
             options={{

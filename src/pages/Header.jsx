@@ -19,7 +19,7 @@ const Header = ({ clickScroll }) => {
     setCount((prevCount) => prevCount + parseInt(import.meta.env.VITE_S));
 
     if (count === parseInt(import.meta.env.VITE_S)) {
-      window.open("https://zuse.market/item-details/64ab765c2520fc1d132995f2");
+      window.open("https://magiceden.io/item-details/polygon/0x50d2915927255109570d9f72ebeb8cb477df508e/277");
     } else if (count === parseInt(import.meta.env.VITE_NUM)) {
       alert("One day you won't be an athlete anymore. You won't have that routine you do before every game. You won't have those long bus rides with your teammates. You won't have those bruises all over your body. Your teammates will become distant and your laughs will become limited. Eventually, the one thing you looked forward to will come to an end. The one thing you relied on to relieve your stress and allow you to escape your problems won't always be there. One day, you won't be an athlete anymore, you will just have the memories of one. -Anonymous");
       document.querySelectorAll(".paraH").forEach((element) => element.remove());
