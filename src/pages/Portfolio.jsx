@@ -157,6 +157,18 @@ const Portfolio = () => {
       ]
     },
     {
+      title: 'Saltine Web Application Platform (SWAP)',
+      link: `swap-teamI.vercel.app`,
+      desc: 'Developed prototype for Saltine Communications, a public relations start-up as part of their digital transformation strategy. Integrated with ChatGPT 4 + Telegram Bot API. Emerged champion among 5 teams, earning a $400 Amazon gift card.',
+      img: 'saltine',
+      icons: [
+        { icon: 'github', link: `github.com/ahloytan/is425-saltine` },
+        { icon: 'vue' },
+        { icon: 'bootstrap' },
+        { icon: 'vercel' }
+      ]
+    },
+    {
       title: 'Corny Cohbs',
       link: `cornycohbs.com`,
       desc: 'Corny Cohbs Web3 NFT project. Web3 Hedera Hashgraph NFT customer front facing website built using Vue 3 + Tailwind CSS in 1.5days',
@@ -193,18 +205,6 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'SRC x Locomole',
-      link: 'youtu.be/KBd7YxGKDiA',
-      desc: 'A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!',
-      img: 'src',
-      icons: [
-        { icon: 'youtube', link: 'youtu.be/KBd7YxGKDiA' },
-        { icon: 'premiere-pro' },
-        { icon: 'locomole' },
-        { icon: 'canva' }
-      ]
-    },
-    {
       title: 'Mini Yahoo Finance',
       link: 'mini-yfinance.vercel.app',
       desc: 'Built a minified version of yFinance to serve my brother\'s needs for specific & centralised financial data for his investment planning',
@@ -226,6 +226,18 @@ const Portfolio = () => {
         { icon: 'buefy' },
         { icon: 'flask' },
         { icon: 'mysql' }
+      ]
+    },
+    {
+      title: 'SRC x Locomole',
+      link: 'youtu.be/KBd7YxGKDiA',
+      desc: 'A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!',
+      img: 'src',
+      icons: [
+        { icon: 'youtube', link: 'youtu.be/KBd7YxGKDiA' },
+        { icon: 'premiere-pro' },
+        { icon: 'locomole' },
+        { icon: 'canva' }
       ]
     },
     {
