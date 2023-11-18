@@ -6,32 +6,129 @@ const Portfolio = () => {
   const expanded = useSelector((state) => state.app.expanded);
   const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
+  const [hoveredNFT, setHoveredNFT] = useState(null);
   const font = isDarkMode ? 'text-white' : 'text-black';
   const bg = isDarkMode ? 'bg-dark' : 'bg-light';
   const pfDir = 'assets/carousel/';
   const linkDir = 'https://';
   const straitsTimes = 'graphics.straitstimes.com/STI/STIMEDIA/Interactives/';
 
-  const hof = [
+  const nft = [
     {
-      img: 'vue',
-      text: 'Vue'
+      img: 'khk',
+      text: 'Styling',
+      children: [
+        {
+          img: 'tailwind',
+          text: 'Tailwind'
+        },
+        {
+          img: 'vuetify',
+          text: 'Vuetify'
+        },
+        {
+          img: 'buefy',
+          text: 'Buefy'
+        },
+        {
+          img: 'bootstrap',
+          text: 'Bootstrap'
+        },
+      ]
     },
     {
-      img: 'nodejs',
-      text: 'NodeJs'
+      img: 'dpgc',
+      text: 'Frontend',
+      children: [
+        {
+          img: 'vue',
+          text: 'Vue'
+        },
+        {
+          img: 'react',
+          text: 'React'
+        },
+        {
+          img: 'javascript',
+          text: 'Javascript'
+        },
+      ]
     },
     {
-      img: 'mysql',
-      text: 'MySQL'
+      img: 'hedera-monkey',
+      text: 'Backend',
+      children: [
+        {
+          img: 'nodejs',
+          text: 'NodeJs'
+        },
+        {
+          img: 'javascript',
+          text: 'Express'
+        },
+        {
+          img: 'flask',
+          text: 'Flask'
+        },
+        {
+          img: 'springboot',
+          text: 'Springboot'
+        },
+      ]      
     },
     {
-      img: 'python',
-      text: 'Python'
+      img: 'herd',
+      text: 'Database',
+      children: [
+        {
+          img: 'mysql',
+          text: 'MySQL'
+        },
+        {
+          img: 'postgres',
+          text: 'Postgres'
+        },  
+      ]   
     },
     {
-      img: 'tailwind',
-      text: 'Tailwind'
+      img: 'boon',
+      text: 'Deploy',
+      children: [
+        {
+          img: 'firebase',
+          text: 'Firebase'
+        },
+        {
+          img: 'vercel',
+          text: 'Vercel'
+        },
+        {
+          img: 'netlify',
+          text: 'Netlify'
+        }, 
+      ]   
+    },
+    {
+      img: 'hgraph-punk',
+      text: 'Others',
+      children: [
+        {
+          img: 'robot-framework',
+          text: 'Robot'
+        },
+        {
+          img: 'python',
+          text: 'Python'
+        },  
+        {
+          img: 'github',
+          text: 'Github'
+        },
+        {
+          img: 'vite',
+          text: 'Vite'
+        },  
+      ]   
     },
   ]
 
@@ -268,7 +365,7 @@ const Portfolio = () => {
 
   const expandPortfolio = () => {
     dispatch(toggleExpanded());
-    document.getElementById('portfolio').style.maxHeight = '10000px';
+    document.getElementById('portfolio').style.maxHeight = '10750px';
   };
 
   useEffect(() => {
@@ -277,10 +374,27 @@ const Portfolio = () => {
     portfolioDiv.classList.toggle('dark-shadow', isDarkMode);
   }, [expanded, isDarkMode]);
 
-  const hallOfFame = hof.map((lang, index) => (
-    <div className="portfolioIcons" key={index}>
-      <img src={`assets/icons/${lang.img}.svg`} alt="" />
-      <span className="text-xs">{lang.text}</span>
+  const nfts = nft.map((cat, index) => (
+    <div key={index} 
+      className={hoveredNFT === cat.img || hoveredNFT == null ? '' : 'notHovered'} 
+      onMouseEnter={() => setHoveredNFT(cat.img)} 
+      onMouseLeave={() => setHoveredNFT(null)} 
+    >
+      <div>
+        <img className="nft" src={`assets/icons/${cat.img}.svg`} alt="" />
+        <span className="text-sm font-bold">{cat.text}</span>
+      </div>
+
+      <div className="portfolioIconHolder">
+        { hoveredNFT === cat.img && 
+          cat.children.map((lang, index1) => (
+            <div key={index1}>
+              <img className="portfolioIcon" src={`assets/icons/${lang.img}.svg`} alt="" />
+              <span className="text-sm">{lang.text}</span>
+            </div>
+          ))
+        }
+      </div>
     </div>
   ))
 
@@ -310,14 +424,9 @@ const Portfolio = () => {
   return (
     <div id="portfolio" className={`portfolio ${font} ${bg}`}>
       <span className="pageTitle">PORTFOLIO</span>
-      <div>
-        {/* <p className="text-sm md:text-base">Here are my best 5!</p>
-        {hallOfFame}     */}
-      </div>
-      <p className="text-sm md:text-base">Click on the images to find out more!</p>
-      <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">
-        {doLoop}
-      </div>
+      <p className="text-sm md:text-base">Hover and click on the images to find out more!</p>
+      <div className="nftsContainer">{nfts}</div>
+      <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">{doLoop}</div>
       {!expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
     </div>
   );

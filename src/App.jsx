@@ -48,7 +48,7 @@
     const components = [
       isLoading && <LoadingScreen key="LoadingScreen"/>,
       !isLoading && !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
-      isMobile && <HBGMenu overlay={overlay} key="HBGMenu"/>,
+      !isLoading && isMobile && <HBGMenu overlay={overlay} key="HBGMenu"/>,
       withSuspense(SlideIn, "SlideIn", {overlay}),
       withSuspense(Portfolio, "Portfolio"),
       withSuspense(BackgroundImage, "Paris", { input: isDarkMode ? "hongkong-night" : "paris" }),
