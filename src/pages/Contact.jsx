@@ -37,7 +37,7 @@ const Contact = () => {
     <div id="contact" className={`contact ${font} ${bg}`}>
       <span className="pageTitle">CONTACT ME</span>
       <div className="socialMediaHolder">{doLoop}</div>
-      <div className={`copyRight ${font}`}>Coded in Singapore | &copy;2023 Aloysius Tan | All Rights Reserved</div>
+      <div className={`copyRight ${font}`}>Coded in Singapore | &copy;2024 Aloysius Tan | All Rights Reserved</div>
     </div>
   );
 };
