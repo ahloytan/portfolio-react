@@ -116,7 +116,7 @@ $base: 0.6rem;
   border-radius: 50%;
 }
 
-.loader__outline {
+.loaderOutline {
   position: absolute;
   top: 0;
   left: 0;
@@ -126,7 +126,7 @@ $base: 0.6rem;
   border: 4px solid #f3f3f3; /* Outline color */
 }
 
-.loader__image {
+.loaderImage {
   position: absolute;
   top: 50%;
   left: 50%;
