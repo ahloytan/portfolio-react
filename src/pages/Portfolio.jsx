@@ -109,7 +109,7 @@ const Portfolio = () => {
       ]   
     },
     {
-      img: 'hgraph-punk',
+      img: 'skult',
       text: 'Others',
       children: [
         {
@@ -381,7 +381,7 @@ const Portfolio = () => {
       onMouseLeave={() => setHoveredNFT(null)} 
     >
       <div>
-        <img className="nft" src={`assets/icons/${cat.img}.svg`} alt="" />
+        <img className="nft" src={`assets/icons/tab/${cat.img}.webp`} alt="" />
         <span className="text-sm font-bold">{cat.text}</span>
       </div>
 
