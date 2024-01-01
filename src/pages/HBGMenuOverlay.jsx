@@ -1,5 +1,3 @@
-import React from 'react';
-
 const HBGMenuOverlay = ({ clickScroll, overlay }) => {
   const pages = ["Portfolio", "Bio", "About", "Contact"];
   const doLoop = pages.map((d, i) => {

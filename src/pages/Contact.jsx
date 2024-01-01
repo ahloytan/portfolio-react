@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Contact = () => {
@@ -29,7 +28,7 @@ const Contact = () => {
 
   const doLoop = data.map((d, i) => (
     <a className="socialMediaIcons" key={i} href={d.link} rel="noreferrer" target="_blank">
-      <img className="style_prevu_kit" src={contactDir + d.icon + '.svg'} alt={d.icon} title={d.icon} />
+      <img className="style_prevu_kit" src={contactDir + d.icon + '.svg'} alt={d.icon} title={d.icon} width="40" height="40"/>
     </a>
   ));
 

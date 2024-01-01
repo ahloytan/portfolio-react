@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 const Bio = () => {
@@ -23,7 +23,7 @@ const Bio = () => {
     <div key={d} className="bioBox text-left md:text-center">
       <div className="catHolder style_prevu_kit">
         <a href={links[i]} rel="noreferrer" target="_blank">
-          <img className={d} src={bioDir + d + ".svg"} title={d} alt={d} />
+          <img className={d} src={bioDir + d + ".svg"} title={d} alt={d} width="90" height="90"/>
         </a>
       </div>
       <div className="top2">

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Header from './Header.jsx';
 import Typewriter from 'typewriter-effect';
@@ -32,8 +32,8 @@ const Home = ({ clickScroll }) => {
     return () => {
       if (imageRef.current) {
         imageRef.current.removeEventListener('load', handleImageLoad);
-
       }
+      
     };
   }, []);
 
@@ -44,7 +44,7 @@ const Home = ({ clickScroll }) => {
 
   const homeBgStyle = {
     height: window.innerHeight + 'px',
-    backgroundImage: `url('assets/background/${isDarkMode ? 'bali' : 'swissland'}.jpg')`,
+    backgroundImage: `url('assets/background/${isDarkMode ? 'bali' : 'swissland'}.webp')`,
   };
 
   return (
@@ -81,9 +81,11 @@ const Home = ({ clickScroll }) => {
       </div>
       <img
         ref={imageRef}
-        src={`assets/background/${isDarkMode ? 'bali' : 'swissland'}.jpg`}
+        src={`assets/background/${isDarkMode ? 'bali' : 'swissland'}.webp`}
         alt={isDarkMode ? 'Bali' : 'Swissland'}
-        style={{ display: 'none' }} // Optional: Hide the image from the DOM
+        style={{ display: 'none' }}
+        width="2000" 
+        height="1500" 
       />
     </div>
   );

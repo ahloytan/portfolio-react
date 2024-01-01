@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 //http://jsfiddle.net/QN9cH/1/
 const BackgroundImage = ({ input }) => {
   const backgroundImageRef = useRef(null);
@@ -6,7 +6,7 @@ const BackgroundImage = ({ input }) => {
   useEffect(() => {
     const bgDir = "assets/background/";
 
-    if (backgroundImageRef.current) backgroundImageRef.current.style.backgroundImage = `url(${bgDir}${input}.jpg)`;
+    if (backgroundImageRef.current) backgroundImageRef.current.style.backgroundImage = `url(${bgDir}${input}.webp)`;
     
   }, [input]);
 

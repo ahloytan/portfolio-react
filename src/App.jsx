@@ -1,6 +1,5 @@
   import React, { useEffect, lazy, Suspense } from 'react';
   import { useSelector } from 'react-redux';
-  import ReactGA from 'react-ga4';
 
   import HBGMenu from './pages/HBGMenu.jsx';
   const SlideIn = lazy(() => import('./pages/SlideIn.jsx'));
@@ -22,9 +21,6 @@
 
     useEffect(() => {
       window.history.scrollRestoration = 'manual';
-      ReactGA.initialize(import.meta.env.VITE_GTAG);
-      ReactGA.send("pageview");
-
       document.documentElement.style.overflow = "hidden";
     }, []);
 

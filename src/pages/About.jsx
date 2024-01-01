@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 
 const About = () => {
@@ -45,7 +44,7 @@ const About = () => {
             {data.map((d, index) => (
               <div className="experience text-center" key={index}>
                 <a href={d.link} target="_blank" rel="noreferrer">
-                  <img className="mx-auto h-20 w-20 rounded-full" src={'assets/experience/' + d.image} alt={d.image} />
+                  <img className="mx-auto h-20 w-20 rounded-full" src={'assets/experience/' + d.image} alt={d.image} width="80" height="80"/>
                 </a>
                 <div className="role font-bold">{d.role}</div>
               </div>

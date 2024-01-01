@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleInput } from '../store/index.jsx';
 import LightModeIcon  from '../components/LightModeIcon.jsx'; // Adjust the file path if necessary
@@ -46,7 +46,7 @@ const Header = ({ clickScroll }) => {
   return (
     <div className="header flex justify-between">
       <div className="navBar">
-        <img className="headerLogo m-4" src="assets/logo/khk.jpg" onClick={activate} alt="headerLogo" />
+        <img className="headerLogo m-4" src="assets/logo/khk.jpg" onClick={activate} alt="headerLogo" width="60" height="60"/>
       </div>
       <div className="text-sm hidden md:inline-flex items-center text-sm uppercase">
         <a className={`mx-4 lg:mx-6 xl:mx-12 navLinks font-m-bold ${font}`} target="_blank" href={import.meta.env.VITE_RESUME} rel="noreferrer">
