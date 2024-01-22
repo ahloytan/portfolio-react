@@ -26,9 +26,9 @@ const Bio = () => {
           <img className={d} src={bioDir + d + ".svg"} title={d} alt={d} width="90" height="90"/>
         </a>
       </div>
-      <div className="top2">
+      <ol className="top2">
         {top2Cat.map((data, index) => <li key={index}>{data[i]}</li>)}
-      </div>
+      </ol>
     </div>
   ));
 

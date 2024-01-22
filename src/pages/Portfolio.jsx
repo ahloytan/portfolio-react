@@ -189,7 +189,7 @@ const Portfolio = () => {
       icons: [
         { icon: 'github', link: `github.com/ahloytan/cakedefi-masternode` },
         { icon: 'react' },
-        { icon: 'axios' },
+        { icon: 'nodejs' },
         { icon: 'vercel' }
       ]
     },
