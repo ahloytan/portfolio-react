@@ -57,7 +57,7 @@ const Header = ({ clickScroll }) => {
           <div>  
             <LightModeIcon />
           </div>
-          <label id="toggle" className="relative inline-flex mx-1">
+          <label id="toggle" className="relative inline-flex mx-1" aria-label="toggle">
             <input type="checkbox" value="" className="sr-only peer" checked={isDarkMode} onChange={handleToggleInput}/>
             <div className="w-11 h-6 bg-light peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-dark peer-checked:after:border-gray-300"></div>
           </label>

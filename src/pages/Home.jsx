@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Header from './Header.jsx';
-import Typewriter from 'typewriter-effect';
+const Typewriter = lazy(() => import('typewriter-effect')); 
 import { showLoadingScreen, fontColor } from '../mixins/helper.jsx';
 
 
@@ -53,21 +53,23 @@ const Home = ({ clickScroll }) => {
       <div id="container"></div>
       <div className={`tagLine font-m-light ${font}`}>
         <div>
-          <Typewriter
-            options={{
-              loop: true,
-            }}
-            onInit={(typewriter) => {
-              typewriter
-                .changeDelay(85)
-                .typeString("See and you'll forget.<br>")
-                .typeString("Do and you'll remember.<br>")
-                .typeString("Teach and you'll understand.")
-                .pauseFor(2250)
-                .deleteAll()
-                .start();
-            }}
-          />
+          {<Suspense> 
+            <Typewriter
+              options={{
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .changeDelay(85)
+                  .typeString("See and you'll forget.<br>")
+                  .typeString("Do and you'll remember.<br>")
+                  .typeString("Teach and you'll understand.")
+                  .pauseFor(2250)
+                  .deleteAll()
+                  .start();
+              }}
+            />
+          </Suspense>}
         </div>
       </div>
       <div className="nameJob mt-20 md:mt-48 w-auto md:w-100">

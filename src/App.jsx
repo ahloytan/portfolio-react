@@ -2,7 +2,7 @@
   import { useSelector } from 'react-redux';
 
   import HBGMenu from './pages/HBGMenu.jsx';
-  const SlideIn = lazy(() => import('./pages/SlideIn.jsx'));
+  import SlideIn from './pages/SlideIn.jsx';
   const Portfolio = lazy(() => import('./pages/Portfolio.jsx'));
   const Bio = lazy(() => import('./pages/Bio.jsx'));
   const About = lazy(() => import('./pages/About.jsx'));
@@ -10,14 +10,12 @@
   const BackgroundImage = lazy(() => import('./components/BackgroundImage.jsx'));
   import RightNavBar from './components/RightNavBar.jsx';
 
-  import LoadingScreen from './components/LoadingScreen.jsx'
   import AnimatedCursor from './components/cursor.jsx';
   import { isMobile } from './mixins/helper.jsx';
 
 
   const App = () => {
     const isDarkMode = useSelector((state) => state.app.isDarkMode);
-    const isLoading = useSelector((state) => state.app.loading);
 
     useEffect(() => {
       window.history.scrollRestoration = 'manual';
@@ -42,10 +40,9 @@
     );
 
     const components = [
-      isLoading && <LoadingScreen key="LoadingScreen"/>,
-      !isLoading && !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
-      !isLoading && isMobile && <HBGMenu overlay={overlay} key="HBGMenu"/>,
-      withSuspense(SlideIn, "SlideIn", {overlay}),
+      !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
+      isMobile && <HBGMenu overlay={overlay} key="HBGMenu"/>,
+      <SlideIn overlay={overlay}/>,
       withSuspense(Portfolio, "Portfolio"),
       withSuspense(BackgroundImage, "Paris", { input: isDarkMode ? "hongkong-night" : "paris" }),
       withSuspense(About, "About"),
@@ -53,7 +50,7 @@
       withSuspense(Bio, "Bio"),
       withSuspense(BackgroundImage, "HongKong", { input: isDarkMode ? "wheelers" : "hongkong" }),
       withSuspense(Contact, "Contact"),
-      !isLoading && !isMobile && <RightNavBar key="RightNavBar"/> 
+      !isMobile && <RightNavBar key="RightNavBar"/> 
     ];
 
     return <main id="main" className="relative font-m-reg">{components}</main>;

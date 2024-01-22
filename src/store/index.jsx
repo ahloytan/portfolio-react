@@ -5,7 +5,7 @@ const appSlice = createSlice({
   name: 'app',
   initialState: {
     isDarkMode: false,
-    loading: true,
+    loading: false,
     expanded: false, // Add the expanded state here
   },
   reducers: {
