@@ -194,15 +194,27 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'In Between',
-      link: 'inbetween2.web.app',
-      desc: 'Made a web application of the popular card game “in-between” to calculate the probability of winning, losing, and drawing when shown 2 cards (Based on the standard 52-card deck)',
-      img: 'in-between',
+      title: 'SG Public Holidays 2018',
+      link: `${straitsTimes}2018/04/data-story-public-holidays/index.html`,
+      desc: 'Utilised D3.Js with JQuery & css effects to visualise the various holidays in Singapore back in 2018',
+      img: 'holidays',
       icons: [
-        { icon: 'github', link: 'inbetween2.web.app' },
+        { icon: 'the-straits-times', link: `${straitsTimes}2018/04/data-story-public-holidays/index.html` },
         { icon: 'vue' },
-        { icon: 'firebase' },
-        { icon: 'scss' }
+        { icon: 'd3' },
+        { icon: 'jquery' }
+      ]
+    },
+    {
+      title: 'Mini Yahoo Finance',
+      link: 'mini-yfinance.vercel.app',
+      desc: 'Built a minified version of yFinance to serve my brother\'s needs for specific & centralised financial data for his investment planning',
+      img: 'mini-yfinance',
+      icons: [
+        { icon: 'github', link: 'github.com/ahloytan/mini-yfinance' },
+        { icon: 'vue' },
+        { icon: 'flask' },
+        { icon: 'vercel' }
       ]
     },
     {
@@ -302,15 +314,15 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Mini Yahoo Finance',
-      link: 'mini-yfinance.vercel.app',
-      desc: 'Built a minified version of yFinance to serve my brother\'s needs for specific & centralised financial data for his investment planning',
-      img: 'mini-yfinance',
+      title: 'In Between',
+      link: 'inbetween2.web.app',
+      desc: 'Made a web application of the popular card game “in-between” to calculate the probability of winning, losing, and drawing when shown 2 cards (Based on the standard 52-card deck)',
+      img: 'in-between',
       icons: [
-        { icon: 'github', link: 'github.com/ahloytan/mini-yfinance' },
+        { icon: 'github', link: 'inbetween2.web.app' },
         { icon: 'vue' },
-        { icon: 'flask' },
-        { icon: 'vercel' }
+        { icon: 'firebase' },
+        { icon: 'scss' }
       ]
     },
     {
@@ -335,18 +347,6 @@ const Portfolio = () => {
         { icon: 'premiere-pro' },
         { icon: 'locomole' },
         { icon: 'canva' }
-      ]
-    },
-    {
-      title: 'SG Public Holidays 2018',
-      link: `${straitsTimes}2018/04/data-story-public-holidays/index.html`,
-      desc: 'Utilised D3.Js with JQuery & css effects to visualise the various holidays in Singapore back in 2018',
-      img: 'holidays',
-      icons: [
-        { icon: 'the-straits-times', link: `${straitsTimes}2018/04/data-story-public-holidays/index.html` },
-        { icon: 'vue' },
-        { icon: 'd3' },
-        { icon: 'jquery' }
       ]
     },
     {

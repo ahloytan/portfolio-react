@@ -41,7 +41,7 @@ const RightNavBar = () => {
   }, []);
 
   return (
-    <nav id="dot-nav">
+    <nav id="dot-nav" className="hidden md:block">
       <ul>
         {navItems.map((item, index) => (
           <li className="dot-container text-right" key={index}>

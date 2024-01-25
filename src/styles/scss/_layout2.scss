@@ -8,7 +8,11 @@ html {
 
 html *,
 body * {
-  cursor: none;
+  cursor: auto;
+
+  @include breakpoint($d_medium) {
+    cursor: none;
+  }
 }
 
 .freeze {

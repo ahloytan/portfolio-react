@@ -11,7 +11,6 @@
   import RightNavBar from './components/RightNavBar.jsx';
 
   import AnimatedCursor from './components/cursor.jsx';
-  import { isMobile } from './mixins/helper.jsx';
 
 
   const App = () => {
@@ -40,9 +39,9 @@
     );
 
     const components = [
-      !isMobile && <AnimatedCursor key="AnimatedCursor"/>,
-      isMobile && <HBGMenu overlay={overlay} key="HBGMenu"/>,
-      <SlideIn overlay={overlay}/>,
+      <AnimatedCursor key="AnimatedCursor"/>,
+      <HBGMenu overlay={overlay} key="HBGMenu"/>,
+      <SlideIn overlay={overlay} key="SlideIn"/>,
       withSuspense(Portfolio, "Portfolio"),
       withSuspense(BackgroundImage, "Paris", { input: isDarkMode ? "hongkong-night" : "paris" }),
       withSuspense(About, "About"),
@@ -50,7 +49,7 @@
       withSuspense(Bio, "Bio"),
       withSuspense(BackgroundImage, "HongKong", { input: isDarkMode ? "wheelers" : "hongkong" }),
       withSuspense(Contact, "Contact"),
-      !isMobile && <RightNavBar key="RightNavBar"/> 
+      <RightNavBar key="RightNavBar"/> 
     ];
 
     return <main id="main" className="relative font-m-reg">{components}</main>;
