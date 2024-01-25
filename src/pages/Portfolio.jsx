@@ -378,7 +378,6 @@ const Portfolio = () => {
     <div key={index} 
       className={hoveredNFT === cat.img || hoveredNFT == null ? '' : 'notHovered'} 
       onMouseEnter={() => setHoveredNFT(cat.img)} 
-      onMouseLeave={() => setHoveredNFT(null)} 
     >
       <div>
         <img className="nft" src={`assets/icons/tab/${cat.img}.webp`} alt="" />
@@ -425,7 +424,7 @@ const Portfolio = () => {
     <div id="portfolio" className={`portfolio ${font} ${bg}`}>
       <span className="pageTitle">PORTFOLIO</span>
       <p className="text-sm md:text-base">Hover and click on the images to find out more!</p>
-      <div className="nftsContainer">{nfts}</div>
+      <div className="nftsContainer" onMouseLeave={() => setHoveredNFT(null)} >{nfts}</div>
       <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">{doLoop}</div>
       {!expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
     </div>
