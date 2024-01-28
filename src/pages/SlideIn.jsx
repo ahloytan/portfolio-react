@@ -12,7 +12,6 @@ const SlideIn = ({ overlay }) => {
       });
     }
 
-    document.body.classList.remove("hideExcess");
   };
 
   return (

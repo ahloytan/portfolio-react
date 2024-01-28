@@ -19,10 +19,6 @@ body * {
   pointer-events: none;
 }
 
-.hideExcess {
-  overflow-y: hidden;
-}
-
 .pageTitle {
   font-size: 30px;
   @include breakpoint($d_medium) {

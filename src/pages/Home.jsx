@@ -1,12 +1,11 @@
 import { useEffect, useRef, lazy, Suspense } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Header from './Header.jsx';
 const Typewriter = lazy(() => import('typewriter-effect')); 
-import { showLoadingScreen, fontColor } from '../mixins/helper.jsx';
+import { fontColor } from '../mixins/helper.jsx';
 
 
 const Home = ({ clickScroll }) => {
-  const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
   const font = fontColor(isDarkMode);
   const imageRef = useRef(null);
@@ -23,24 +22,6 @@ const Home = ({ clickScroll }) => {
     window.addEventListener('resize', landscapeCheck);
     return () => window.removeEventListener('resize', landscapeCheck);
   }, []);
-
-  useEffect(() => {
-    if (imageRef.current) {
-      imageRef.current.addEventListener('load', handleImageLoad);
-    }
-
-    return () => {
-      if (imageRef.current) {
-        imageRef.current.removeEventListener('load', handleImageLoad);
-      }
-      
-    };
-  }, []);
-
-  const handleImageLoad = () => {
-    document.documentElement.style.overflowY = 'scroll'; // Re-enable scrolling
-    return showLoadingScreen(dispatch);
-  };
 
   const homeBgStyle = {
     height: window.innerHeight + 'px',
