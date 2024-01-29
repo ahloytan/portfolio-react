@@ -1,22 +1,13 @@
 body,
 html {
-  cursor: none;
+  cursor: auto;
   height: 100%;
   margin: 0 !important;
   scroll-behavior: smooth;
-}
-
-html *,
-body * {
-  cursor: auto;
 
   @include breakpoint($d_medium) {
     cursor: none;
   }
-}
-
-.freeze {
-  pointer-events: none;
 }
 
 .pageTitle {
