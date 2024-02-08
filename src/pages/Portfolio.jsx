@@ -218,6 +218,18 @@ const Portfolio = () => {
       ]
     },
     {
+      title: 'Corny Cohbs',
+      link: `cornycohbs.com`,
+      desc: 'Corny Cohbs Web3 NFT project. Web3 Hedera Hashgraph NFT customer front facing website built using Vue 3 + Tailwind CSS in 1.5days',
+      img: 'corny-cobhs',
+      icons: [
+        { icon: 'github', link: `github.com/ahloytan/Corny-Cohbs` },
+        { icon: 'vue' },
+        { icon: 'tailwind' },
+        { icon: 'firebase' }
+      ]
+    },
+    {
       title: 'Budget Breakdown 2018',
       link: `${straitsTimes}2018/02/singapore-budget-revenue-and-spending-breakdown-2018/index.html`,
       desc: 'Visualised the 2018 Singapore revenue & spending with D3.js. Filters include year comparison and sector breakdown by spending',
@@ -242,18 +254,6 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Corporate Pass Application',
-      link: `github.com/chewyixin99/is442-oop-22`,
-      desc: 'An automated system for Singapore Sports School to manage their corporate pass bookings, replacing the manual and labor-intensive process currently used by the staff. The system aims to streamline operations, reduce workload, and minimize the potential for human errors in the booking process.',
-      img: 'oop',
-      icons: [
-        { icon: 'vue', link: `github.com/chewyixin99/is442-oop-22` },
-        { icon: 'springboot' },
-        { icon: 'mysql' },
-        { icon: 'bootstrap' }
-      ]
-    },
-    {
       title: 'Trump vs Kim: Who Said What',
       link: `${straitsTimes}2018/06/guess-what-Kim-Trump-said/index.html`,
       desc: 'A short quiz about identifying a phrase and guessing which leader said it. Users get to view their results against other players\' guesses',
@@ -266,27 +266,39 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Saltine Web Application Platform (SWAP)',
-      link: `swap-teamI.vercel.app`,
-      desc: 'Developed prototype for Saltine Communications, a public relations start-up as part of their digital transformation strategy. Integrated with ChatGPT 4 + Telegram Bot API. Emerged champion among 5 teams, earning a $400 Amazon gift card.',
-      img: 'saltine',
+      title: 'DBS TechTrek Hackathon 2024',
+      link: 'dbs-t10.vercel.app/auth/login',
+      desc: 'A proof of concept full-stack web application. Added extra features like vercel deployment, cloud storage, JWT authentication, and generative AI',
+      img: 'dbs',
       icons: [
-        { icon: 'github', link: `github.com/ahloytan/is425-saltine` },
-        { icon: 'vue' },
-        { icon: 'bootstrap' },
-        { icon: 'vercel' }
+        { icon: 'github', link: 'github.com/ahloytan/dbs-techtrek' },
+        { icon: 'next-js' },
+        { icon: 'nodejs' },
+        { icon: 'firebase' }
       ]
     },
     {
-      title: 'Corny Cohbs',
-      link: `cornycohbs.com`,
-      desc: 'Corny Cohbs Web3 NFT project. Web3 Hedera Hashgraph NFT customer front facing website built using Vue 3 + Tailwind CSS in 1.5days',
-      img: 'corny-cobhs',
+      title: 'Corporate Pass Application',
+      link: `github.com/chewyixin99/is442-oop-22`,
+      desc: 'An automated system for Singapore Sports School to manage their corporate pass bookings, replacing the manual and labor-intensive process currently used by the staff. The system aims to streamline operations, reduce workload, and minimize the potential for human errors in the booking process.',
+      img: 'oop',
       icons: [
-        { icon: 'github', link: `github.com/ahloytan/Corny-Cohbs` },
-        { icon: 'vue' },
-        { icon: 'tailwind' },
-        { icon: 'firebase' }
+        { icon: 'vue', link: `github.com/chewyixin99/is442-oop-22` },
+        { icon: 'springboot' },
+        { icon: 'mysql' },
+        { icon: 'bootstrap' }
+      ]
+    },
+    {
+      title: 'SRC x Locomole',
+      link: 'youtu.be/KBd7YxGKDiA',
+      desc: 'A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!',
+      img: 'src',
+      icons: [
+        { icon: 'youtube', link: 'youtu.be/KBd7YxGKDiA' },
+        { icon: 'premiere-pro' },
+        { icon: 'locomole' },
+        { icon: 'canva' }
       ]
     },
     {
@@ -314,12 +326,24 @@ const Portfolio = () => {
       ]
     },
     {
+      title: 'Saltine Web Application Platform (SWAP)',
+      link: `swap-teamI.vercel.app`,
+      desc: 'Developed prototype for Saltine Communications, a public relations start-up as part of their digital transformation strategy. Integrated with ChatGPT 4 + Telegram Bot API. Emerged champion among 5 teams, earning a $400 Amazon gift card.',
+      img: 'saltine',
+      icons: [
+        { icon: 'github', link: `github.com/ahloytan/is425-saltine` },
+        { icon: 'vue' },
+        { icon: 'bootstrap' },
+        { icon: 'vercel' }
+      ]
+    },
+    {
       title: 'In Between',
       link: 'inbetween2.web.app',
       desc: 'Made a web application of the popular card game “in-between” to calculate the probability of winning, losing, and drawing when shown 2 cards (Based on the standard 52-card deck)',
       img: 'in-between',
       icons: [
-        { icon: 'github', link: 'inbetween2.web.app' },
+        { icon: 'github', link: 'github.com/ahloytan/in-between' },
         { icon: 'vue' },
         { icon: 'firebase' },
         { icon: 'scss' }
@@ -335,18 +359,6 @@ const Portfolio = () => {
         { icon: 'buefy' },
         { icon: 'flask' },
         { icon: 'mysql' }
-      ]
-    },
-    {
-      title: 'SRC x Locomole',
-      link: 'youtu.be/KBd7YxGKDiA',
-      desc: 'A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!',
-      img: 'src',
-      icons: [
-        { icon: 'youtube', link: 'youtu.be/KBd7YxGKDiA' },
-        { icon: 'premiere-pro' },
-        { icon: 'locomole' },
-        { icon: 'canva' }
       ]
     },
     {

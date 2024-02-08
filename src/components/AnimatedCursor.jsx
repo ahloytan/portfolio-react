@@ -189,7 +189,7 @@ function AnimatedCursor({
   return (
     <>
       <div ref={cursorOuterRef} style={styles.cursorOuter} className="hidden md:block"/>
-      <div ref={cursorInnerRef} style={styles.cursorInner} className="hidden md:block" />
+      <div ref={cursorInnerRef} style={styles.cursorInner} className="hidden md:block"/>
     </>
   );
 }

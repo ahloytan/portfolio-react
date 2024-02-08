@@ -30,7 +30,7 @@ const About = () => {
       readMoreElement.remove();
       aboutDescElement.insertAdjacentHTML(
         'beforeend',
-        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.Js, React.Js, D3.Js, Gulp.Js, Bootstrap, Tailwind, and Vuetify. For backend, I'm still learning the ropes on Node.js, Express.js, C#, ASP.NET Core, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I will showcase more learnings in future projects!"
+        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.js, React.js, D3.js, Vite, Gulp.js, Bootstrap, Tailwind, and Vuetify. For backend, I'm still learning the ropes on Node.js, Express.js, C#, ASP.NET Core, Next.js, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I will showcase more learnings in future projects!"
       );
     }
   };
@@ -57,13 +57,13 @@ const About = () => {
             </a>{' '}
             I'm an aspiring full-stack software engineer that enjoys coding! Interned at{' '}
             <a href="https://www.aimazing.co/#gref" target="_blank" rel="noreferrer">
-              AImazing
+              AImazing (2023)
             </a>{' '}
             as a Fullstack Developer, at {' '}
             <a href="https://surer.sg/" target="_blank" rel="noreferrer">
               Surer
             </a>{' '}
-            as a Backend Developer in 2022 Summer & at{' '}
+            as a Backend Developer in (2022) & at{' '}
             <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank" rel="noreferrer">
               The Straits Times
             </a>{' '}

@@ -11,7 +11,7 @@
   const RightNavBar = lazy(() => import('./components/RightNavBar.jsx'));
 
   import SkeletonLoader from './components/SkeletonLoader.jsx';
-  import AnimatedCursor from './components/Cursor.jsx';
+  import AnimatedCursor from './components/AnimatedCursor.jsx';
 
 
   const App = () => {
