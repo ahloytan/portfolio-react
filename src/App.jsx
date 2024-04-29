@@ -3,20 +3,18 @@
 
   import HBGMenu from './pages/HBGMenu.jsx';
   import SlideIn from './pages/SlideIn.jsx';
-  const Portfolio = lazy(() => import('./pages/Portfolio.jsx'));
+  import Portfolio from './pages/Portfolio.jsx';
   const Bio = lazy(() => import('./pages/Bio.jsx'));
   const About = lazy(() => import('./pages/About.jsx'));
   const Contact = lazy(() => import('./pages/Contact.jsx'));
   const BackgroundImage = lazy(() => import('./components/BackgroundImage.jsx'));
   const RightNavBar = lazy(() => import('./components/RightNavBar.jsx'));
 
-  import SkeletonLoader from './components/SkeletonLoader.jsx';
   import AnimatedCursor from './components/AnimatedCursor.jsx';
 
 
   const App = () => {
     const isDarkMode = useSelector((state) => state.app.isDarkMode);
-    const isLoading = useSelector((state) => state.app.loading);
 
     const overlay = () => {
       // Toggle classes
@@ -26,7 +24,7 @@
     };
 
     const withSuspense = (Component, key, props) => (
-      <Suspense fallback={<SkeletonLoader/>} key={key}>
+      <Suspense fallback={<div>Loading...</div>} key={key}>
         <Component {...props} />
       </Suspense>
     );
@@ -35,7 +33,7 @@
       <AnimatedCursor key="AnimatedCursor"/>,
       <HBGMenu overlay={overlay} key="HBGMenu"/>,
       <SlideIn overlay={overlay} key="SlideIn"/>,
-      withSuspense(Portfolio, "Portfolio"),
+      <Portfolio key="Portfolio"/>,
       withSuspense(BackgroundImage, "Paris", { input: isDarkMode ? "hongkong-night" : "paris" }),
       withSuspense(About, "About"),
       withSuspense(BackgroundImage, "Rome", { input: isDarkMode ? "sgp" : "rome" }),

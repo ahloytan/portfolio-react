@@ -57,17 +57,17 @@ const About = () => {
             </a>{' '}
             I'm an aspiring full-stack software engineer that enjoys coding! Interned at{' '}
             <a href="https://www.aimazing.co/#gref" target="_blank" rel="noreferrer">
-              AImazing (2023)
+              AImazing
             </a>{' '}
-            as a Fullstack Developer, at {' '}
+            as a Fullstack Developer (2023), at {' '}
             <a href="https://surer.sg/" target="_blank" rel="noreferrer">
               Surer
             </a>{' '}
-            as a Backend Developer in (2022) & at{' '}
+            as a Backend Developer (2022) & at{' '}
             <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank" rel="noreferrer">
               The Straits Times
             </a>{' '}
-            as a Frontend Developer back in 2018.{' '}
+            as a Frontend Developer (2018).{' '}
             <a id="readMore" onClick={readMore} href="#/">
               Read More
             </a>

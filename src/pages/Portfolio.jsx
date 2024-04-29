@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleExpanded } from '../store/index';
+import { toggleExpanded, toggleLoadingScreen } from '../store/index';
+
+import SkeletonLoader from '../components/SkeletonLoader.jsx';
 
 const Portfolio = () => {
   const expanded = useSelector((state) => state.app.expanded);
+  const isLoading = useSelector((state) => state.app.loading);
   const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
   const [hoveredNFT, setHoveredNFT] = useState(null);
@@ -158,17 +161,18 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Gender Paygap',
-      link: `${straitsTimes}2018/03/dataSTories-gender-pay-gap/index.html`,
-      desc: 'Data-fueled interactive that shows the average pay difference between male and female across different industries!',
-      img: 'gendergap',
+      title: 'The Next Big Hit',
+      link: `is428-va.vercel.app`,
+      desc: 'Visualised using D3.js and integrated with Spotify API, this project aims to unravel the complexities behind chart-toppers on Spotify, shedding light on the multifaceted dynamics driving music trends.',
+      img: 'is428',
       icons: [
-        { icon: 'the-straits-times', link: `${straitsTimes}2018/03/dataSTories-gender-pay-gap/index.html` },
-        { icon: 'vue' },
+        { icon: 'github', link: `github.com/sophiaaachow/is428-g2t1` },
+        { icon: 'react' },
         { icon: 'd3' },
-        { icon: 'css' }
+        { icon: 'spotify' }
       ]
     },
+
     {
       title: 'Hongbao Draw 2018',
       link: `${straitsTimes}2018/02/toto-hongbao-historical/index.html`,
@@ -268,13 +272,13 @@ const Portfolio = () => {
     {
       title: 'DBS TechTrek Hackathon 2024',
       link: 'dbs-t10.vercel.app/auth/login',
-      desc: 'A proof of concept full-stack web application. Added extra features like vercel deployment, cloud storage, JWT authentication, and generative AI',
+      desc: 'A proof of concept full-stack web application. Additional features include: Supabase, Telegram bot, and LLM integration',
       img: 'dbs',
       icons: [
         { icon: 'github', link: 'github.com/ahloytan/dbs-techtrek' },
         { icon: 'next-js' },
         { icon: 'nodejs' },
-        { icon: 'firebase' }
+        { icon: 'supabase' }
       ]
     },
     {
@@ -373,12 +377,28 @@ const Portfolio = () => {
         { icon: 'firebase' }
       ]
     },
+    {
+      title: 'Gender Paygap',
+      link: `${straitsTimes}2018/03/dataSTories-gender-pay-gap/index.html`,
+      desc: 'Data-fueled interactive that shows the average pay difference between male and female across different industries!',
+      img: 'gendergap',
+      icons: [
+        { icon: 'the-straits-times', link: `${straitsTimes}2018/03/dataSTories-gender-pay-gap/index.html` },
+        { icon: 'vue' },
+        { icon: 'd3' },
+        { icon: 'css' }
+      ]
+    },
   ];
 
   const expandPortfolio = () => {
     dispatch(toggleExpanded());
     document.getElementById('portfolio').style.maxHeight = '10750px';
   };
+
+  useEffect(() => {
+    dispatch(toggleLoadingScreen(false));
+  }, [])
 
   useEffect(() => {
     const portfolioDiv = document.getElementById('portfolio');
@@ -437,7 +457,8 @@ const Portfolio = () => {
       <span className="pageTitle">PORTFOLIO</span>
       <p className="text-sm md:text-base">Hover and click on the images to find out more!</p>
       <div className="nftsContainer" onMouseLeave={() => setHoveredNFT(null)} >{nfts}</div>
-      <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">{doLoop}</div>
+      {isLoading && <SkeletonLoader/>}
+      {!isLoading && <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">{doLoop}</div>}
       {!expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
     </div>
   );
