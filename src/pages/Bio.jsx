@@ -37,7 +37,7 @@ const Bio = () => {
       <div className="descBox descBioBox" ref={descBoxRef}>
         <span className="pageTitle">MY BIO</span>
         <div className="description">
-          Yo! I'm a 26-year-old final year student at SMU, majoring in Information Systems. Btw, those cool background images you see were actually taken by me! I'm really into sports, piano, and games –
+          Yo! I'm a fresh grad from SMU, majored in Information Systems. Btw, those cool background images you see were actually taken by me! I'm really into sports, piano, and games –
           they're my passions! I'm also super grateful to be featured on{' '}           
           <a href={vidLink} rel="noreferrer" target="_blank">
             MINDEF

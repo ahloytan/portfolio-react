@@ -7,6 +7,11 @@ const About = () => {
 
   const data = [
     {
+      image: 'dbs.png',
+      role: 'Backend Developer',
+      link: 'https://www.dbs.com.sg/',
+    },
+    {
       image: 'aimazing.jpg',
       role: 'Full-stack Developer',
       link: 'https://www.linkedin.com/company/aimazing/',
@@ -55,19 +60,23 @@ const About = () => {
             <a href={import.meta.env.VITE_RESUME} target="_blank" rel="noreferrer">
               Résumé!
             </a>{' '}
-            I'm an aspiring full-stack software engineer that enjoys coding! Interned at{' '}
+            I'm an aspiring full-stack software engineer that enjoys coding! Currently a SEEDer at{' '} 
+            <a href="https://www.dbs.com.sg/" target="_blank" rel="noreferrer">
+            DBS
+            </a>
+            ! Previously interned at{' '}
             <a href="https://www.aimazing.co/#gref" target="_blank" rel="noreferrer">
               AImazing
             </a>{' '}
-            as a Fullstack Developer (2023), at {' '}
+            as a Fullstack dev (2023), at {' '}
             <a href="https://surer.sg/" target="_blank" rel="noreferrer">
               Surer
             </a>{' '}
-            as a Backend Developer (2022) & at{' '}
+            as a Backend dev (2022) & at{' '}
             <a href="https://www.straitstimes.com/tags/interactive-graphics" target="_blank" rel="noreferrer">
               The Straits Times
             </a>{' '}
-            as a Frontend Developer (2018).{' '}
+            as a Frontend dev (2018).{' '}
             <a id="readMore" onClick={readMore} href="#/">
               Read More
             </a>
