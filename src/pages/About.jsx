@@ -8,7 +8,7 @@ const About = () => {
   const data = [
     {
       image: 'dbs.png',
-      role: 'Backend Developer',
+      role: 'Frontend Developer',
       link: 'https://www.dbs.com.sg/',
     },
     {

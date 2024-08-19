@@ -30,7 +30,7 @@
     );
 
     const components = [
-      <AnimatedCursor key="AnimatedCursor"/>,
+      // <AnimatedCursor key="AnimatedCursor"/>,
       <HBGMenu overlay={overlay} key="HBGMenu"/>,
       <SlideIn overlay={overlay} key="SlideIn"/>,
       <Portfolio key="Portfolio"/>,

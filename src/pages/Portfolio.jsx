@@ -52,6 +52,10 @@ const Portfolio = () => {
           text: 'React'
         },
         {
+          img: 'angular',
+          text: 'Angular'
+        },
+        {
           img: 'javascript',
           text: 'Javascript'
         },

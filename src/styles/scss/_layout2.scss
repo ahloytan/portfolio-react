@@ -5,9 +5,9 @@ html {
   margin: 0 !important;
   scroll-behavior: smooth;
 
-  @include breakpoint($d_medium) {
-    cursor: none;
-  }
+  // @include breakpoint($d_medium) {
+  //   cursor: none;
+  // }
 }
 
 .pageTitle {
