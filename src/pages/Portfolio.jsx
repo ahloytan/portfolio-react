@@ -227,7 +227,7 @@ const Portfolio = () => {
     },
     {
       title: 'Corny Cohbs',
-      link: `cornycohbs.com`,
+      link: `corny-cohbs-dev.web.app/`,
       desc: 'Corny Cohbs Web3 NFT project. Web3 Hedera Hashgraph NFT customer front facing website built using Vue 3 + Tailwind CSS in 1.5days',
       img: 'corny-cobhs',
       icons: [
