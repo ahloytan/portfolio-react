@@ -397,7 +397,7 @@ const Portfolio = () => {
 
   const expandPortfolio = () => {
     dispatch(toggleExpanded());
-    document.getElementById('portfolio').style.maxHeight = '10750px';
+    document.getElementById('portfolio').style.maxHeight = '10765px';
   };
 
   useEffect(() => {
