@@ -48,16 +48,12 @@ const Portfolio = () => {
           text: 'Vue'
         },
         {
-          img: 'react',
-          text: 'React'
-        },
-        {
           img: 'angular',
           text: 'Angular'
         },
         {
-          img: 'javascript',
-          text: 'Javascript'
+          img: 'react',
+          text: 'React'
         },
       ]
     },
@@ -153,15 +149,15 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Portfolio',
-      link: 'ahloytan.netlify.app',
-      desc: '3rd iteration of my personal portfolio website. Building and upgrading my portfolio website using React JS, Redux, Vite, and Netlify!',
-      img: 'portfolio',
+      title: 'Angular Lab',
+      link: 'ng-obs.vercel.app',
+      desc: 'A space where I quickly build and test proof-of-concept ideas that I implement into actual features as part of my software engineering work at DBS.',
+      img: 'angular-lab',
       icons: [
-        { icon: 'github', link: 'github.com/ahloytan/portfolio-react' },
-        { icon: 'react' },
+        { icon: 'github', link: 'https://github.com/ahloytan/angular-lab' },
+        { icon: 'angular' },
         { icon: 'tailwind' },
-        { icon: 'netlify' }
+        { icon: 'vercel' }
       ]
     },
     {
@@ -298,15 +294,14 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'SRC x Locomole',
-      link: 'youtu.be/KBd7YxGKDiA',
-      desc: 'A short promotional film on the various attractions along the Singapore River with LocoMole! Scenery was dope and I tried my best to capture it all!',
-      img: 'src',
+      title: 'Spot On English School',
+      link: 'spotonenglishschool.net',
+      desc: 'SPA built for a tuition center using Nuxt.js and Tailwind. Focus is on delivering a clean UI to showcase classes, schedules, and key information for students and parents.',
+      img: 'spot-on-eng-sch',
       icons: [
-        { icon: 'youtube', link: 'youtu.be/KBd7YxGKDiA' },
-        { icon: 'premiere-pro' },
-        { icon: 'locomole' },
-        { icon: 'canva' }
+        { icon: 'nuxt'},
+        { icon: 'tailwind' },
+        { icon: 'vercel' }
       ]
     },
     {
