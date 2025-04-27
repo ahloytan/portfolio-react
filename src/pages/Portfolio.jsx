@@ -72,11 +72,7 @@ const Portfolio = () => {
         {
           img: 'flask',
           text: 'Flask'
-        },
-        {
-          img: 'springboot',
-          text: 'Springboot'
-        },
+        }
       ]      
     },
     {
@@ -415,8 +411,8 @@ const Portfolio = () => {
         <span className="text-sm font-bold">{cat.text}</span>
       </div>
 
-      <div className="portfolioIconHolder">
-        { hoveredNFT === cat.img && 
+      <div className={`portfolioIconHolder ${hoveredNFT === cat.img ? 'hovered': 'notHovered'}`}>
+        {
           cat.children.map((lang, index1) => (
             <div key={index1}>
               <img className="portfolioIcon" src={`assets/icons/${lang.img}.svg`} alt="" />
