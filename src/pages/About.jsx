@@ -35,7 +35,7 @@ const About = () => {
       readMoreElement.remove();
       aboutDescElement.insertAdjacentHTML(
         'beforeend',
-        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.js, React.js, D3.js, Vite, Gulp.js, Bootstrap, Tailwind, and Vuetify. For backend, I'm still learning the ropes on Node.js, Express.js, C#, ASP.NET Core, Next.js, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I will showcase more learnings in future projects!"
+        "Working towards my goal as a competent software engineer, I've been picking up frontend skills such as Vue.js, React.js, D3.js, Vite, Gulp.js, Bootstrap, Tailwind, and Vuetify. For backend, I'm still learning the ropes on Node.js, Express.js, Next.js, and Java.<br/><br/>A start was to create a personal website from scratch using what I've learnt and I will showcase more learnings in future projects!"
       );
     }
   };
@@ -49,7 +49,7 @@ const About = () => {
             {data.map((d, index) => (
               <div className="experience text-center" key={index}>
                 <a href={d.link} target="_blank" rel="noreferrer">
-                  <img className="mx-auto h-20 w-20 rounded-full" src={'assets/experience/' + d.image} alt={d.image} width="80" height="80"/>
+                  <img className="mx-auto h-16 w-16 rounded-full" src={'assets/experience/' + d.image} alt={d.image} width="80" height="80"/>
                 </a>
                 <div className="role font-bold">{d.role}</div>
               </div>
