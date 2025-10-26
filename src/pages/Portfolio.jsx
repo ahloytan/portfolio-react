@@ -449,7 +449,7 @@ const Portfolio = () => {
 
   return (
     <div id="portfolio" className={`portfolio ${font} ${bg}`}>
-      <span className="pageTitle">PORTFOLIO</span>
+      <h1 className="pageTitle">PORTFOLIO</h1>
       <p className="text-sm md:text-base">Hover and click on the images to find out more!</p>
       <div className="nftsContainer" onMouseLeave={() => setHoveredNFT(null)} >{nfts}</div>
       {isLoading && <SkeletonLoader/>}

@@ -35,10 +35,10 @@ const Bio = () => {
   return (
     <div id="bio" className={`bio text-sm md:text-base ${bg} ${font}`} ref={bioRef}>
       <div className="descBox descBioBox" ref={descBoxRef}>
-        <span className="pageTitle">MY BIO</span>
+        <h1 className="pageTitle">MY BIO</h1>
         <div className="description">
           Yo! I'm a fresh grad from SMU, majored in Information Systems. Btw, those cool background images you see were actually taken by me! I'm really into sports, piano, and games –
-          they're my passions! I'm also super grateful to be featured on{' '}           
+          they're my passions! I love to do side projects and I'm also open to freelance web development. I'm also super grateful to be featured on{' '}           
           <a href={vidLink} rel="noreferrer" target="_blank">
             MINDEF
           </a>

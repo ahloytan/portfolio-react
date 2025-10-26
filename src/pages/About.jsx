@@ -43,7 +43,7 @@ const About = () => {
   return (
     <div id="about" className={`about text-sm md:text-base ${font} ${bg}`}>
       <div className="descBox">
-        <div className="pageTitle">EXPERIENCE</div>
+        <h1 className="pageTitle">EXPERIENCE</h1>
         <div className="aboutDesc description">
           <div className="experienceBox flex justify-between mb-8">
             {data.map((d, index) => (

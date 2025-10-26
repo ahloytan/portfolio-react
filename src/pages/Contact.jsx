@@ -34,7 +34,7 @@ const Contact = () => {
 
   return (
     <div id="contact" className={`contact ${font} ${bg}`}>
-      <span className="pageTitle">CONTACT ME</span>
+      <h1 className="pageTitle">CONTACT ME</h1>
       <div className="socialMediaHolder">{doLoop}</div>
       <div className={`copyRight ${font}`}>Coded in Singapore | &copy;{new Date().getFullYear()} Aloysius Tan | All Rights Reserved</div>
     </div>

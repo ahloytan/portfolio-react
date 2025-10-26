@@ -54,8 +54,8 @@ const Home = ({ clickScroll }) => {
         </div>
       </div>
       <div className="nameJob mt-20 md:mt-48 w-auto md:w-100">
-        <div className={`text-3xl md:text-5xl py-2.5 ${font}`}>ALOYSIUS TAN</div>
-        <div className={`text-base md:text-2xl pb-2.5 font-m-light ${font}`}>WEB DEVELOPER</div>
+        <h1 className={`text-3xl md:text-5xl py-2.5 ${font}`}>ALOYSIUS TAN</h1>
+        <h2 className={`text-base md:text-2xl pb-2.5 font-m-light ${font}`}>WEB DEVELOPER</h2>
       </div>
       <div className="scrollHolder">
         <div className="chevron"></div>
