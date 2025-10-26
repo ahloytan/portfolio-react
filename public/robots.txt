@@ -3,4 +3,4 @@ Disallow: /private/
 Disallow: /admin/
 Allow: /
 
-Sitemap: https://ahloytan.netlify.app/assets/sitemap.xml
+Sitemap: https://ahloytan.netlify.app/sitemap.xml
