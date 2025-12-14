@@ -25,7 +25,7 @@ const Home = ({ clickScroll }) => {
 
   const homeBgStyle = {
     height: window.innerHeight + 'px',
-    backgroundImage: `url('assets/background/${isDarkMode ? 'bali' : 'swissland'}.webp')`,
+    backgroundImage: `url('assets/background/${isDarkMode ? 'busan' : 'swissland'}.webp')`,
   };
 
   return (
@@ -61,15 +61,7 @@ const Home = ({ clickScroll }) => {
         <div className="chevron"></div>
         <div className="chevron"></div>
         <div className="chevron"></div>
-      </div>
-      <img
-        ref={imageRef}
-        src={`assets/background/${isDarkMode ? 'bali' : 'swissland'}.webp`}
-        alt={isDarkMode ? 'Bali' : 'Swissland'}
-        style={{ display: 'none' }}
-        width="2000" 
-        height="1500" 
-      />
+      </div>  
     </div>
   );
 };
