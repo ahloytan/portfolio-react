@@ -14,14 +14,11 @@ const appSlice = createSlice({
     },
     toggleLoadingScreen: (state, action) => {
       state.loading = action.payload;
-    },
-    toggleExpanded: (state) => {
-      state.expanded = !state.expanded;
-    },
+    }
   },
 });
 
-export const { toggleInput, toggleLoadingScreen, toggleExpanded } = appSlice.actions;
+export const { toggleInput, toggleLoadingScreen } = appSlice.actions;
 
 const reducer = {
   app: appSlice.reducer,

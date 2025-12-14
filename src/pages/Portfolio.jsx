@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleExpanded, toggleLoadingScreen } from '../store/index';
+import { toggleLoadingScreen } from '../store/index';
+import { isMobile } from './../mixins/helper.jsx';
 
 import SkeletonLoader from '../components/SkeletonLoader.jsx';
 
 const Portfolio = () => {
-  const expanded = useSelector((state) => state.app.expanded);
+  const [portfolioMaxHeight, setPortfolioMaxHeight] = useState(1000);
+  const [portfolioHeight, setPortfolioHeight] = useState(1000);
   const isLoading = useSelector((state) => state.app.loading);
   const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
@@ -142,7 +144,8 @@ const Portfolio = () => {
         { icon: 'robot-framework' },
         { icon: 'python' },
         { icon: 'batch' }
-      ]
+      ],
+      order: 1
     },
     {
       title: 'Angular Lab',
@@ -154,7 +157,8 @@ const Portfolio = () => {
         { icon: 'angular' },
         { icon: 'tailwind' },
         { icon: 'vercel' }
-      ]
+      ],
+      order: 4
     },
     {
       title: 'The Next Big Hit',
@@ -166,7 +170,8 @@ const Portfolio = () => {
         { icon: 'react' },
         { icon: 'd3' },
         { icon: 'spotify' }
-      ]
+      ],
+      order: 5
     },
 
     {
@@ -179,7 +184,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'google-maps' },
         { icon: 'javascript' }
-      ]
+      ],
+      order: 6
     },
     {
       title: 'CakeDeFi Masternode',
@@ -191,7 +197,8 @@ const Portfolio = () => {
         { icon: 'react' },
         { icon: 'nodejs' },
         { icon: 'vercel' }
-      ]
+      ],
+      order: 10
     },
     {
       title: 'SG Public Holidays 2018',
@@ -203,19 +210,21 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'd3' },
         { icon: 'jquery' }
-      ]
+      ],
+      order: 19
     },
     {
       title: 'Mini Yahoo Finance',
       link: 'mini-yfinance.vercel.app',
-      desc: 'Built a minified version of yFinance to serve my brother\'s needs for specific & centralised financial data for his investment planning',
+      desc: 'Built a minified version of Yahoo Finance to serve my brother\'s needs for specific & centralised financial data for his investment planning',
       img: 'mini-yfinance',
       icons: [
         { icon: 'github', link: 'github.com/ahloytan/mini-yfinance' },
         { icon: 'vue' },
         { icon: 'flask' },
         { icon: 'vercel' }
-      ]
+      ],
+      order: 3
     },
     {
       title: 'Corny Cohbs',
@@ -227,7 +236,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'tailwind' },
         { icon: 'firebase' }
-      ]
+      ],
+      order: 7
     },
     {
       title: 'Budget Breakdown 2018',
@@ -239,7 +249,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'd3' },
         { icon: 'javascript' }
-      ]
+      ],
+      order: 21
     },
     {
       title: 'Christmas Lights On or Off?',
@@ -251,7 +262,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'javascript' },
         { icon: 'scss' }
-      ]
+      ],
+      order: 8
     },
     {
       title: 'Trump vs Kim: Who Said What',
@@ -263,7 +275,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'firebase' },
         { icon: 'axios' }
-      ]
+      ],
+      order: 9
     },
     {
       title: 'DBS TechTrek Hackathon 2024',
@@ -275,7 +288,8 @@ const Portfolio = () => {
         { icon: 'next-js' },
         { icon: 'nodejs' },
         { icon: 'supabase' }
-      ]
+      ],
+      order: 2
     },
     {
       title: 'Corporate Pass Application',
@@ -287,7 +301,8 @@ const Portfolio = () => {
         { icon: 'springboot' },
         { icon: 'mysql' },
         { icon: 'bootstrap' }
-      ]
+      ],
+      order: 11
     },
     {
       title: 'Spot On English School',
@@ -298,7 +313,8 @@ const Portfolio = () => {
         { icon: 'nuxt'},
         { icon: 'tailwind' },
         { icon: 'vercel' }
-      ]
+      ],
+      order: 12
     },
     {
       title: 'World Cup 2018',
@@ -310,7 +326,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'unity' },
         { icon: 'javascript' }
-      ]
+      ],
+      order: 13
     },
     {
       title: 'Sun Hung Kai Properties',
@@ -322,7 +339,8 @@ const Portfolio = () => {
         { icon: 'vuetify' },
         { icon: 'vue' },
         { icon: 'nodejs' }
-      ]
+      ],
+      order: 14
     },
     {
       title: 'Saltine Web Application Platform (SWAP)',
@@ -334,7 +352,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'bootstrap' },
         { icon: 'vercel' }
-      ]
+      ],
+      order: 15
     },
     {
       title: 'In Between',
@@ -346,7 +365,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'firebase' },
         { icon: 'scss' }
-      ]
+      ],
+      order: 16
     },
     {
       title: 'Taskucci',
@@ -358,7 +378,8 @@ const Portfolio = () => {
         { icon: 'buefy' },
         { icon: 'flask' },
         { icon: 'mysql' }
-      ]
+      ],
+      order: 17
     },
     {
       title: 'Orange Dolphin',
@@ -370,7 +391,8 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'bootstrap' },
         { icon: 'firebase' }
-      ]
+      ],
+      order: 18
     },
     {
       title: 'Gender Paygap',
@@ -382,24 +404,25 @@ const Portfolio = () => {
         { icon: 'vue' },
         { icon: 'd3' },
         { icon: 'css' }
-      ]
+      ],
+      order: 20
     },
   ];
 
-  const expandPortfolio = () => {
-    dispatch(toggleExpanded());
-    document.getElementById('portfolio').style.maxHeight = '10765px';
+  const viewMore = () => {
+    document.getElementById('portfolio').style.maxHeight = portfolioHeight + (portfolioMaxHeight / 4) + 'px';
+    setPortfolioHeight((prev) => prev + (portfolioMaxHeight / 4));
   };
 
   useEffect(() => {
     dispatch(toggleLoadingScreen(false));
-  }, [])
+    setPortfolioMaxHeight(document.getElementById('theColumn')?.offsetHeight);
+    if (portfolioHeight > portfolioMaxHeight) document.getElementById('portfolio').classList.add('expanded');
+  }, [projects])
 
   useEffect(() => {
-    const portfolioDiv = document.getElementById('portfolio');
-    portfolioDiv.classList.toggle('expanded', expanded);
-    portfolioDiv.classList.toggle('dark-shadow', isDarkMode);
-  }, [expanded, isDarkMode]);
+    document.getElementById('portfolio').classList.toggle('dark-shadow', isDarkMode);
+  }, [isDarkMode]);
 
   const nfts = nft.map((cat, index) => (
     <div key={index} 
@@ -424,7 +447,15 @@ const Portfolio = () => {
     </div>
   ))
 
-  const doLoop = projects.map((project, index) => (
+  const sortedProjects = useMemo(() => {
+    if (isMobile) {
+      return [...projects].sort((a, b) => a.order - b.order);
+    }
+
+    return projects
+  }, [projects, isMobile]);
+
+  const doLoop = sortedProjects.map((project, index) => (
     <div className="pb-8 rounded" key={index}>
       <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           <div className="overflow-auto">
@@ -454,7 +485,7 @@ const Portfolio = () => {
       <div className="nftsContainer" onMouseLeave={() => setHoveredNFT(null)} >{nfts}</div>
       {isLoading && <SkeletonLoader/>}
       {!isLoading && <div id="theColumn" className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 mt-6">{doLoop}</div>}
-      {!expanded && <div id="viewMore" onClick={expandPortfolio}>View More</div>}
+      {(portfolioHeight < portfolioMaxHeight) && <div id="viewMore" onClick={viewMore}>View More</div>}
     </div>
   );
 };
