@@ -1,9 +1,26 @@
 const HBGMenuOverlay = ({ clickScroll, overlay }) => {
-  const pages = ["Portfolio", "Bio", "About", "Contact"];
+  const pages = [
+    {
+      title: 'Portfolio',
+      image: 'gamcheon'
+    },
+    {
+      title: 'Bio',
+      image: 'huinnyeoul'
+    },
+    {
+      title: 'About',
+      image: 'coto'
+    },
+    {
+      title: 'Contact',
+      image: 'woljeonggyo'
+    }
+  ];
   const doLoop = pages.map((d, i) => {
-    const smallCaps = d.toLowerCase();
+    const smallCaps = d.title.toLowerCase();
     return (
-      <div key={i} className="divHold">
+      <div key={i} className="divHold" style={{backgroundImage: `url('assets/background/${d.image}.webp`}}>
         <div
           className="overlayPages"
           onClick={() => {
@@ -11,9 +28,8 @@ const HBGMenuOverlay = ({ clickScroll, overlay }) => {
             overlay();
           }}
         >
-          {d}
+          {d.title}
         </div>
-        <div className="liner"></div>
       </div>
     );
   });
@@ -21,11 +37,9 @@ const HBGMenuOverlay = ({ clickScroll, overlay }) => {
   return (
     <div className="menuOverlay">
       <div className="overlayContent">
-        <div className="divHold"></div>
-        <div className="divHold">
+        <div className="divHold" style={{backgroundImage: `url('assets/background/daereungwon.webp`}}>
           <a className="resume" target="_blank" href={import.meta.env.VITE_RESUME} rel="noreferrer">
             <div className="overlayPages">Résumé</div>
-            <div className="liner"></div>
           </a>
         </div>
         {doLoop}
