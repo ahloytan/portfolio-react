@@ -8,7 +8,6 @@ import { fontColor } from '../mixins/helper.jsx';
 const Home = ({ clickScroll }) => {
   const isDarkMode = useSelector((state) => state.app.isDarkMode);
   const font = fontColor(isDarkMode);
-  const imageRef = useRef(null);
 
   useEffect(() => {
     const landscapeCheck = () => {
