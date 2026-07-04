@@ -1,9 +1,25 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { robots } from 'vite-plugin-robots'
+import Sitemap from 'vite-plugin-sitemap'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    robots({
+      policy: [
+        {
+          userAgent: '*',
+          allow: '/',
+          disallow: ['/private/', '/admin/'],
+        },
+      ],
+    }),
+    Sitemap({
+      hostname: 'https://ahloytan.netlify.app',
+    })
+  ],
   build: {
     outDir: 'dist',
     rollupOptions: {
